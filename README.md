@@ -52,3 +52,19 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Astroツールバー削除コマンド
+
+```bash
+npm run astro preferences disable devToolbar
+```
+
+## tailwindコンパイル
+
+`tailwind.config.mjs`は触らない！
+`generate-tailwind.js`を編集して、毎回コンパイルする
+↓コンパイルのコマンド
+
+```bash
+node .\generate-tailwind.js
+```
