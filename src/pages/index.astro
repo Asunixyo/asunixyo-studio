@@ -1,7 +1,113 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import Bubble from "@components/Bubble.astro";
+import SpeechBubble from "@components/SpeechBubble.astro";
+import TypographyH2 from "@components/TypographyH2.astro";
+import BubbleSkill from "@components/BubbleSkill.astro";
+import "@styles/clamps.css";
+// import "@styles/animations.css";
+import "@styles/fonts.css";
+// import "@styles/utils.css";
 ---
 
 <Layout title="Welcome to Asunixyo Studio.">
-  <main class="h-16 w-16 bg-black"></main>
+  <div class="bg-[#FAEEE7] max-w-[430px]">
+    <div class="h-screen">
+      <header class="flex justify-between items-center px-[5vw] py-[2vh]">
+        <div class="">
+          <img src="/public/assets/images/header/logo.png" alt="" />
+        </div>
+        <div class="">
+          <img src="/public/assets/images/header/humberger.png" alt="" />
+        </div>
+      </header>
+      <div class="">
+        <div class="relative">
+          <Bubble
+            className="absolute top-[6vh] left-[10vw] w-[9vw] bg-[#FFC6C7]"
+          />
+          <Bubble
+            className="absolute top-[14vh] left-[-2vw] w-[7vw] bg-[#FFF]"
+          />
+          <Bubble
+            className="absolute top-[1vh] left-[34vw] w-[8vw] bg-[#FFF]"
+          />
+          <Bubble
+            className="absolute top-[5vh] left-[73vw] w-[20vw] bg-[#FFC6C7]"
+          />
+          <Bubble
+            className="absolute top-[20vh] left-[20vw] w-[17vw] bg-[#FFC6C7]"
+          />
+          <Bubble
+            className="absolute top-[20vh] left-[57vw] w-[12vw] bg-[#FFD9DA]"
+          />
+          <Bubble
+            className="absolute top-[29vh] left-[75vw] w-[9vw] bg-[#FFF]"
+          />
+          <div class="w-full pt-[9vh] absolute z-10 flex justify-center">
+            <div class="w-[80vw]">
+              <img
+                class="w-full"
+                src="/public/assets/images/first-view/title.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="pt-[55vh] w-[30vw]">
+            <img
+              class="w-full"
+              src="/public/assets/images/first-view/balloon-kids.png"
+              alt=""
+            />
+          </div>
+          <SpeechBubble className="absolute top-[51vh] left-[51vw] w-[21vw]" />
+          <SpeechBubble className="absolute top-[50vh] left-[31vw] w-[22vw]" />
+          <SpeechBubble
+            className="absolute top-[51.5vh] left-[69vw] w-[20vw]"
+          />
+          <SpeechBubble className="absolute top-[43vh] left-[42vw] w-[20vw]" />
+          <SpeechBubble className="absolute top-[43vh] left-[60vw] w-[22vw]" />
+          <SpeechBubble className="absolute top-[56vh] left-[42vw] w-[20vw]" />
+          <SpeechBubble className="absolute top-[56vh] left-[56vw] w-[23vw]" />
+          <SpeechBubble className="absolute top-[60vh] left-[33vw] w-[12vw]" />
+          <SpeechBubble className="absolute top-[65vh] left-[26vw] w-[6vw]" />
+        </div>
+        <div class="flex flex-col justify-center mt-[3vh]">
+          <p class="mx-auto text-[4vw]">see more</p>
+          <div class="mx-auto pt-[3vh] w-[2vw]">
+            <img
+              class="w-full"
+              src="/public/assets/images/first-view/down-allow.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="mb-[4vh]">
+        <TypographyH2 text="ABOUT" />
+        <div class="grid grid-cols-2 gap-[1vw] w-[75vw] mx-auto items-center">
+          <div class="rounded-full w-[25vw] aspect-square bg-gray-500"></div>
+          <p class="text-[1.8vw]">
+            東京都出身の25歳、フリーランスのWebエンジニアとして活動しています。
+            保育業界で4年間の経験を積み、その後はWeb系の会社に転職し、デザインとエンジニアリングの知識を深め、SEOの分野でも実績を持っています。
+            どうぞよろしくお願いいたします。
+          </p>
+        </div>
+      </section>
+      <section class="mb-[4vh] px-[5vw]">
+        <TypographyH2 text="SKILL" />
+        <div class="relative h-[60vh]">
+          <BubbleSkill
+            className="bg-[url('/assets/images/skill/html.png')] absolute top-[6vh] left-[10vw] w-[50vw] bg-[#FFC6C7] pt-[4vh]"
+            text="半年間の実務経験を通じて、パーツ単位から全体のレイアウトまでのデザインを実現する能力を磨き上げました。特に、レスポンシブデザインにも対応し、様々なデバイスでの閲覧を考慮したレイアウト作成が得意です。"
+            skillText="HTML"
+          />
+        </div>
+      </section>
+    </main>
+  </div>
 </Layout>

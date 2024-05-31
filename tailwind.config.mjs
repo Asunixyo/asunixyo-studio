@@ -44153,8 +44153,8 @@ export default {
         "CorporateLogoMedium": [
           "\"Corporate Logo Medium ver3\""
         ],
-        "CorporateLogoBold": [
-          "\"Corporate Logo Bold ver3\""
+        "KumarOneRegular": [
+          "\"KumarOne Regular\""
         ]
       },
       "backgroundImage": {

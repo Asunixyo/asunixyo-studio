@@ -145,7 +145,7 @@ const tailwindConfig = {
         AbhayaLibreRegular: ['"AbhayaLibre Regular"'],
         AbhayaLibreSemiBold: ['"AbhayaLibre SemiBold"'],
         CorporateLogoMedium: ['"Corporate Logo Medium ver3"'],
-        CorporateLogoBold: ['"Corporate Logo Bold ver3"'],
+        KumarOneRegular: ['"KumarOne Regular"'],
       },
       backgroundImage: {
         "dashed-line":

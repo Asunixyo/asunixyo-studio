@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "KumarOne Regular";
+  src: url("/assets/fonts/KumarOne/KumarOne-Regular.woff2") format("woff2"),
+    url("/assets/fonts/KumarOne/KumarOne-Regular.woff") format("woff");
+}
+
+/* @font-face {
+  font-family: "07LightNovelPOP";
+  src: url("/assets/fonts/07-light-novel-pop/07LightNovelPOP.woff2") format("woff2"),
+    url("/assets/fonts/07-light-novel-pop/07LightNovelPOP.woff") format("woff");
+} */
