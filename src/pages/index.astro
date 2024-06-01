@@ -4,82 +4,100 @@ import Bubble from "@components/Bubble.astro";
 import SpeechBubble from "@components/SpeechBubble.astro";
 import TypographyH2 from "@components/TypographyH2.astro";
 import BubbleSkill from "@components/BubbleSkill.astro";
+import BallonHistory from "@components/BalloonHistory.astro";
+import BubbleWork from "@components/BubbleWork.astro";
 import "@styles/clamps.css";
-// import "@styles/animations.css";
 import "@styles/fonts.css";
-// import "@styles/utils.css";
 ---
 
 <Layout title="Welcome to Asunixyo Studio.">
-  <div class="bg-[#FAEEE7] max-w-[430px]">
+  <div class="bg-[#FAEEE7] max-w-[430px] mx-auto shadow-xl">
     <div class="h-screen">
-      <header class="flex justify-between items-center px-[5vw] py-[2vh]">
+      <header
+        class="flex justify-between items-center px-clamp-5vw py-clamp-2vh"
+      >
         <div class="">
-          <img src="/public/assets/images/header/logo.png" alt="" />
+          <img src="/assets/images/header/logo.png" alt="" />
         </div>
         <div class="">
-          <img src="/public/assets/images/header/humberger.png" alt="" />
+          <img src="/assets/images/header/humberger.png" alt="" />
         </div>
       </header>
-      <div class="">
+      <div class="overflow-x-hidden">
         <div class="relative">
           <Bubble
-            className="absolute top-[6vh] left-[10vw] w-[9vw] bg-[#FFC6C7]"
+            className="absolute top-clamp-6vh left-clamp-10vw w-clamp-9vw bg-[#FFC6C7]"
           />
           <Bubble
-            className="absolute top-[14vh] left-[-2vw] w-[7vw] bg-[#FFF]"
+            className="absolute top-clamp-14vh -left-clamp-2vw w-clamp-7vw bg-[#FFF]"
           />
           <Bubble
-            className="absolute top-[1vh] left-[34vw] w-[8vw] bg-[#FFF]"
+            className="absolute top-clamp-1vh left-clamp-34vw w-clamp-8vw bg-[#FFF]"
           />
           <Bubble
-            className="absolute top-[5vh] left-[73vw] w-[20vw] bg-[#FFC6C7]"
+            className="absolute top-clamp-5vh left-clamp-73vw w-clamp-20vw bg-[#FFC6C7]"
           />
           <Bubble
-            className="absolute top-[20vh] left-[20vw] w-[17vw] bg-[#FFC6C7]"
+            className="absolute top-clamp-20vh left-clamp-20vw w-clamp-17vw bg-[#FFC6C7]"
           />
           <Bubble
-            className="absolute top-[20vh] left-[57vw] w-[12vw] bg-[#FFD9DA]"
+            className="absolute top-clamp-20vh left-clamp-57vw w-clamp-12vw bg-[#FFD9DA]"
           />
           <Bubble
-            className="absolute top-[29vh] left-[75vw] w-[9vw] bg-[#FFF]"
+            className="absolute top-clamp-29vh left-clamp-75vw w-clamp-9vw bg-[#FFF]"
           />
-          <div class="w-full pt-[9vh] absolute z-10 flex justify-center">
-            <div class="w-[80vw]">
+          <div class="w-full pt-clamp-9vh absolute z-10 flex justify-center">
+            <div class="w-clamp-80vw">
               <img
                 class="w-full"
-                src="/public/assets/images/first-view/title.png"
+                src="/assets/images/first-view/title.png"
                 alt=""
               />
             </div>
           </div>
         </div>
         <div class="relative">
-          <div class="pt-[55vh] w-[30vw]">
+          <div class="pt-clamp-55vh w-clamp-30vw">
             <img
               class="w-full"
-              src="/public/assets/images/first-view/balloon-kids.png"
+              src="/assets/images/first-view/balloon-kids.png"
               alt=""
             />
           </div>
-          <SpeechBubble className="absolute top-[51vh] left-[51vw] w-[21vw]" />
-          <SpeechBubble className="absolute top-[50vh] left-[31vw] w-[22vw]" />
           <SpeechBubble
-            className="absolute top-[51.5vh] left-[69vw] w-[20vw]"
+            className="absolute top-clamp-51vh left-clamp-51vw w-clamp-21vw"
           />
-          <SpeechBubble className="absolute top-[43vh] left-[42vw] w-[20vw]" />
-          <SpeechBubble className="absolute top-[43vh] left-[60vw] w-[22vw]" />
-          <SpeechBubble className="absolute top-[56vh] left-[42vw] w-[20vw]" />
-          <SpeechBubble className="absolute top-[56vh] left-[56vw] w-[23vw]" />
-          <SpeechBubble className="absolute top-[60vh] left-[33vw] w-[12vw]" />
-          <SpeechBubble className="absolute top-[65vh] left-[26vw] w-[6vw]" />
+          <SpeechBubble
+            className="absolute top-clamp-50vh left-clamp-31vw w-clamp-22vw"
+          />
+          <SpeechBubble
+            className="absolute top-clamp-51.5vh left-clamp-69vw w-clamp-20vw"
+          />
+          <SpeechBubble
+            className="absolute top-clamp-43vh left-clamp-42vw w-clamp-20vw"
+          />
+          <SpeechBubble
+            className="absolute top-clamp-43vh left-clamp-60vw w-clamp-22vw"
+          />
+          <SpeechBubble
+            className="absolute top-clamp-56vh left-clamp-42vw w-clamp-20vw"
+          />
+          <SpeechBubble
+            className="absolute top-clamp-56vh left-clamp-56vw w-clamp-23vw"
+          />
+          <SpeechBubble
+            className="absolute top-clamp-60vh left-clamp-33vw w-clamp-12vw"
+          />
+          <SpeechBubble
+            className="absolute top-clamp-65vh left-clamp-26vw w-clamp-6vw"
+          />
         </div>
-        <div class="flex flex-col justify-center mt-[3vh]">
-          <p class="mx-auto text-[4vw]">see more</p>
-          <div class="mx-auto pt-[3vh] w-[2vw]">
+        <div class="flex flex-col justify-center mt-clamp-3vh">
+          <p class="mx-auto text-clamp-4vw">see more</p>
+          <div class="mx-auto pt-clamp-3vh w-clamp-2vw">
             <img
               class="w-full"
-              src="/public/assets/images/first-view/down-allow.png"
+              src="/assets/images/first-view/down-allow.png"
               alt=""
             />
           </div>
@@ -87,27 +105,194 @@ import "@styles/fonts.css";
       </div>
     </div>
     <main>
-      <section class="mb-[4vh]">
+      <section class="mb-clamp-4vh">
         <TypographyH2 text="ABOUT" />
-        <div class="grid grid-cols-2 gap-[1vw] w-[75vw] mx-auto items-center">
-          <div class="rounded-full w-[25vw] aspect-square bg-gray-500"></div>
-          <p class="text-[1.8vw]">
+        <div
+          class="grid grid-cols-2 gap-clamp-1vw w-clamp-75vw mx-auto items-center"
+        >
+          <div class="rounded-full w-clamp-25vw aspect-square bg-gray-500">
+          </div>
+          <p class="text-clamp-1.8vw">
             東京都出身の25歳、フリーランスのWebエンジニアとして活動しています。
             保育業界で4年間の経験を積み、その後はWeb系の会社に転職し、デザインとエンジニアリングの知識を深め、SEOの分野でも実績を持っています。
             どうぞよろしくお願いいたします。
           </p>
         </div>
       </section>
-      <section class="mb-[4vh] px-[5vw]">
+      <section class="mb-clamp-4vh px-clamp-5vw">
         <TypographyH2 text="SKILL" />
-        <div class="relative h-[60vh]">
+        <div class="relative h-clamp-71vh">
           <BubbleSkill
-            className="bg-[url('/assets/images/skill/html.png')] absolute top-[6vh] left-[10vw] w-[50vw] bg-[#FFC6C7] pt-[4vh]"
+            className="bg-[url('/assets/images/skill/html.png')] absolute -top-clamp-3vh -left-clamp-2vw w-clamp-49vw bg-[#FFC6C7] pt-clamp-4vh"
             text="半年間の実務経験を通じて、パーツ単位から全体のレイアウトまでのデザインを実現する能力を磨き上げました。特に、レスポンシブデザインにも対応し、様々なデバイスでの閲覧を考慮したレイアウト作成が得意です。"
             skillText="HTML"
           />
+          <BubbleSkill
+            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-3vh left-clamp-60vw w-clamp-29vw bg-[#FFD9DA] pt-clamp-4vh"
+            text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
+            skillText="CSS"
+          />
+          <BubbleSkill
+            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-23vh left-clamp-30vw w-clamp-44vw bg-[#FFD9DA] pt-clamp-4vh"
+            text="ショートコードの知見を持っており、今後はWordPressの高度なカスタマイズやテーマ作成にも挑戦していく予定です。"
+            skillText="WordPress"
+          />
+          <BubbleSkill
+            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-44vh -left-clamp-1vw w-clamp-33vw bg-[#FFF] pt-clamp-4vh"
+            classNameSkill="text-[#FFD9DA]"
+            text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
+            skillText="Astro"
+          />
+          <BubbleSkill
+            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-50vh left-clamp-52vw w-clamp-37vw bg-[#FFC6C7] pt-clamp-4vh"
+            text="「slick」や「garalley」の導入経験を持っています。これにより、動的なウェブページの実装やユーザー体験の向上が期待できます。"
+            skillText="Javascript"
+          />
         </div>
       </section>
+      <section class="mb-clamp-4vh px-clamp-5vw">
+        <TypographyH2 text="HISTORY" />
+        <div class="relative h-clamp-71vh">
+          <div
+            class="absolute top-clamp-30vh left-1/2 -translate-x-1/2 w-clamp-1.5vw h-clamp-80vw bg-[#FFC6C7] bg-opacity-50 rounded-md"
+          >
+          </div>
+          <BallonHistory
+            className="absolute top-clamp-0vh -left-clamp-1.5vw"
+            isLeft={true}
+            imgSrc="/assets/images/history/balloon-light-pink.png"
+            workplaceText="個人事業主としてWebエンジニア活動"
+          >
+            <li>
+              コーポレートサイトの実装
+              <br
+              />→WordPressでの構築、独自のアニメーション実装（TypeScript）に注力
+            </li>
+            <li>
+              商品紹介のLP制作
+              <br />→Astroを使いコンポーネント化や静的サイト生成の流れを理解
+            </li>
+            <li>
+              高校のホームページリニューアル
+              <br />→WordPressの構築、SEO対策を実施
+            </li>
+            <li>ChatbotのUI改修</li>
+          </BallonHistory>
+          <BallonHistory
+            className="absolute top-clamp-6vh -right-clamp-1.5vw"
+            isLeft={false}
+            imgSrc="/assets/images/history/balloon-dark-pink.png"
+            workplaceText="株式会社ネクストレベル"
+          >
+            <li>フロントエンドエンジニアとして、デザインを元にコーディング</li>
+            <li>メディアチームとコミュニケーションを取りながら改善を進行</li>
+            <li>広報チームとして外部とメールのやり取り</li>
+            <li>給与の振込み、検収業務、備品管理などの管理業務</li>
+          </BallonHistory>
+          <BallonHistory
+            className="absolute top-clamp-30vh -left-clamp-1.5vw"
+            isLeft={true}
+            imgSrc="/assets/images/history/balloon-dark-pink.png"
+            workplaceText="株式会社千趣会 チャイルドケア えがおの森保育園"
+          >
+            <li>1歳児（2年間）、2歳児（1年間）の担任</li>
+            <li>保育計画立案</li>
+            <li>教材、製作準備</li>
+            <li>定期的な保護者面談、保育相談</li>
+            <li>計画、実践、反省、改善の繰り返し実施</li>
+            <li>行事のリーダー、計画立案、進行</li>
+            <li>ピアノ（リトミック、リズム運動）</li>
+          </BallonHistory>
+          <BallonHistory
+            className="absolute top-clamp-36vh -right-clamp-1.5vw"
+            isLeft={false}
+            imgSrc="/assets/images/history/balloon-light-pink.png"
+            workplaceText="学校法人 ひかり学園 第一ひかり幼稚園"
+          >
+            <li>未就園児クラスの副担任</li>
+            <li>全クラスの補助</li>
+            <li>遠足同行</li>
+            <li>お便り制作</li>
+          </BallonHistory>
+        </div>
+      </section>
+      <section class="mb-clamp-4vh px-clamp-5vw">
+        <TypographyH2 text="WORK" />
+        <div
+          class="mx-auto w-clamp-80vw grid grid-cols-2 gap-x-clamp-6vw gap-y-clamp-4vh"
+        >
+          <BubbleWork
+            link="https://reqkaji.com/"
+            imgSrc="/assets/images/work/work-1.png"
+            text="コーポレートサイトの実装"
+          />
+          <BubbleWork
+            link="https://kgcoutougakuin-setagaya.tokyo/"
+            imgSrc="/assets/images/work/work-2.png"
+            text="高校のホームページ制作"
+          />
+          <BubbleWork
+            link="https://www.e-namaco.com/lp/001/"
+            imgSrc="/assets/images/work/work-3.png"
+            text="商品紹介LP制作"
+          />
+          <BubbleWork
+            link="https://asunixyo.com/"
+            imgSrc="/assets/images/work/work-4.png"
+            text="ポートフォリオ（WordPress）"
+          />
+        </div>
+      </section>
+      <footer
+        class="relative overflow-hidden pt-clamp-5vh h-clamp-37vh bg-[#FFC6C7]"
+      >
+        <SpeechBubble
+          className="absolute top-clamp-1vh -left-clamp-28vw w-clamp-39vw"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-18vh -left-clamp-5vw w-clamp-15vw"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-19vh right-clamp-4vw w-clamp-18vw"
+        />
+        <SpeechBubble
+          className="absolute -top-clamp-2vh -right-clamp-5vw w-clamp-22vw"
+        />
+        <p class="ml-clamp-14vw w-clamp-50vw text-clamp-3vw text-white">
+          HTML、CSS、Sass、JavaScript、WordPressなど、多彩なスキルを持ち、ウェブプロジェクトの成功に貢献してきました。あなたのウェブプロジェクトを実現しましょう。HPの制作を承ります。お気軽にご相談ください。
+        </p>
+        <div class="flex justify-end mr-clamp-23vw mb-clamp-3vh">
+          <div class="w-clamp-30vw">
+            <img
+              class="w-full"
+              src="/assets/images/footer/contact.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="gap-clamp-8vw flex items-center justify-center">
+          <a href="" target="_blank" class="w-clamp-8vw">
+            <img class="w-full" src="/assets/images/footer/github.png" alt="" />
+          </a>
+          <a href="" target="_blank" class="w-clamp-11vw">
+            <img
+              class="w-full"
+              src="/assets/images/footer/threads.png"
+              alt=""
+            />
+          </a>
+          <a href="" target="_blank" class="w-clamp-8vw">
+            <img
+              class="w-full"
+              src="/assets/images/footer/instagram.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <p class="text-center text-clamp-3vw text-white">
+          &copy; 2024 Asunixyo Studio.
+        </p>
+      </footer>
     </main>
   </div>
 </Layout>

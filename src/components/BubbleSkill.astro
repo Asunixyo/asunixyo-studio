@@ -1,18 +1,24 @@
 ---
 interface Props {
   className: string;
+  classNameSkill?: string;
   text: string;
   skillText: string;
 }
 
-const { className,text,skillText } = Astro.props;
+const {
+  className,
+  classNameSkill = "text-white",
+  text,
+  skillText,
+} = Astro.props;
 ---
 
 <div
-  class=`bg-[length:50%] bg-center bg-no-repeat flex justify-center items-center aspect-square bg-opacity-80 rounded-full shadow-md ${className}`
+  class=`bg-[length:40%] bg-center bg-no-repeat flex justify-center items-center aspect-square rounded-full shadow-md ${className}`
 >
   <div class="flex flex-col text-center">
-    <p class="w-[80%] text-[2vw] mx-auto">{text}</p>
-    <p class="font-KumarOneRegular mt-[2vh] text-white">{skillText}</p>
+    <p class="w-[80%] text-clamp-2vw mx-auto">{text}</p>
+    <p class=`font-KumarOneRegular mt-clamp-2vh ${classNameSkill}`>{skillText}</p>
   </div>
 </div>
