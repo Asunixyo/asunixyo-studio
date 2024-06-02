@@ -12,7 +12,7 @@ import "@styles/fonts.css";
 
 <Layout title="Welcome to Asunixyo Studio.">
   <div class="bg-[#FAEEE7] max-w-[430px] mx-auto shadow-xl">
-    <div class="h-screen">
+    <div class="h-screen max-[430px]:h-svh">
       <header
         class="flex justify-between items-center px-clamp-5vw py-clamp-2vh"
       >
@@ -105,118 +105,142 @@ import "@styles/fonts.css";
       </div>
     </div>
     <main>
-      <section class="mb-clamp-4vh">
+      <section class="mb-clamp-6vh">
         <TypographyH2 text="ABOUT" />
-        <div
-          class="grid grid-cols-2 gap-clamp-1vw w-clamp-75vw mx-auto items-center"
-        >
-          <div class="rounded-full w-clamp-25vw aspect-square bg-gray-500">
+        <div class="flex justify-center">
+          <div class="relative w-clamp-80vw">
+            <div class="absolute -top-clamp-1vw right-clamp-6vw w-clamp-50vw">
+              <img
+                class="w-full rounded-full"
+                src="/public/assets/images/about/me.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="absolute top-clamp-24vw left-clamp-8vw w-clamp-29vw rounded-md"
+            >
+              <img
+                class="w-full rounded-full"
+                src="/public/assets/images/about/cat.jpg"
+                alt=""
+              />
+            </div>
+            <div class="text-clamp-4vw pt-clamp-60vw tracking-widest">
+              <p>
+                東京都出身の25歳、フリーランスのWebエンジニアとして活動しています。
+              </p>
+              <p>
+                保育業界で4年間の経験を積み、その後はWeb系の会社に転職し、デザインとエンジニアリングの知識を深め、SEOの分野でも実績を持っています。どうぞよろしくお願いいたします。
+              </p>
+            </div>
           </div>
-          <p class="text-clamp-1.8vw">
-            東京都出身の25歳、フリーランスのWebエンジニアとして活動しています。
-            保育業界で4年間の経験を積み、その後はWeb系の会社に転職し、デザインとエンジニアリングの知識を深め、SEOの分野でも実績を持っています。
-            どうぞよろしくお願いいたします。
-          </p>
         </div>
       </section>
-      <section class="mb-clamp-4vh px-clamp-5vw">
+      <section class="mb-clamp-6vh px-clamp-5vw">
         <TypographyH2 text="SKILL" />
         <div class="relative h-clamp-71vh">
-          <BubbleSkill
-            className="bg-[url('/assets/images/skill/html.png')] absolute -top-clamp-3vh -left-clamp-2vw w-clamp-49vw bg-[#FFC6C7] pt-clamp-4vh"
-            text="半年間の実務経験を通じて、パーツ単位から全体のレイアウトまでのデザインを実現する能力を磨き上げました。特に、レスポンシブデザインにも対応し、様々なデバイスでの閲覧を考慮したレイアウト作成が得意です。"
-            skillText="HTML"
-          />
-          <BubbleSkill
-            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-3vh left-clamp-60vw w-clamp-29vw bg-[#FFD9DA] pt-clamp-4vh"
-            text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
-            skillText="CSS"
-          />
-          <BubbleSkill
-            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-23vh left-clamp-30vw w-clamp-44vw bg-[#FFD9DA] pt-clamp-4vh"
-            text="ショートコードの知見を持っており、今後はWordPressの高度なカスタマイズやテーマ作成にも挑戦していく予定です。"
-            skillText="WordPress"
-          />
-          <BubbleSkill
-            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-44vh -left-clamp-1vw w-clamp-33vw bg-[#FFF] pt-clamp-4vh"
-            classNameSkill="text-[#FFD9DA]"
-            text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
-            skillText="Astro"
-          />
-          <BubbleSkill
-            className="bg-[url('/assets/images/skill/html.png')] absolute top-clamp-50vh left-clamp-52vw w-clamp-37vw bg-[#FFC6C7] pt-clamp-4vh"
-            text="「slick」や「garalley」の導入経験を持っています。これにより、動的なウェブページの実装やユーザー体験の向上が期待できます。"
-            skillText="Javascript"
-          />
+          <div class="absolute top-clamp-0vh -left-clamp-2vw">
+            <BubbleSkill
+              languageImgSrc="/public/assets/images/skill/html.png"
+              className="line-clamp-3 absolute top-0 left-0 w-clamp-49vw bg-[#FFC6C7]"
+              classNameText="line-clamp-3"
+              text="半年間の実務経験を通じて、パーツ単位から全体のレイアウトまでのデザインを実現する能力を磨き上げました。特に、レスポンシブデザインにも対応し、様々なデバイスでの閲覧を考慮したレイアウト作成が得意です。"
+            />
+            <BubbleSkill
+              className="absolute -top-clamp-2vw left-clamp-36vw w-clamp-18vw bg-[#FFC6C7]"
+              languageText="HTML"
+            />
+          </div>
+          <div class="absolute top-clamp-3vh left-clamp-60vw">
+            <BubbleSkill
+              languageImgSrc="/public/assets/images/skill/html.png"
+              className="absolute top-0 left-0 w-clamp-29vw bg-[#FFD9DA]"
+              classNameText="line-clamp-2"
+              text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
+            />
+            <BubbleSkill
+              className="absolute top-clamp-20vw -left-clamp-7vw w-clamp-18vw bg-[#FFD9DA]"
+              languageText="CSS"
+            />
+          </div>
+          <div class="absolute top-clamp-28vh left-clamp-30vw">
+            <BubbleSkill
+              languageImgSrc="/public/assets/images/skill/html.png"
+              className="absolute top-0 left-0 w-clamp-44vw bg-[#FFD9DA]"
+              classNameText="line-clamp-3"
+              text="ショートコードの知見を持っており、今後はWordPressの高度なカスタマイズやテーマ作成にも挑戦していく予定です。"
+            />
+            <BubbleSkill
+              className="absolute top-clamp-1vw -left-clamp-11vw w-clamp-18vw bg-[#FFD9DA]"
+              languageText="Word<br />Press"
+            />
+          </div>
+          <div class="absolute top-clamp-44vh -left-clamp-1vw">
+            <BubbleSkill
+              languageImgSrc="/public/assets/images/skill/html.png"
+              className="absolute top-0 left-0 w-clamp-33vw bg-[#FFF]"
+              classNameLanguage="text-[#FFD9DA]"
+              classNameText="line-clamp-2"
+              text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
+            />
+            <BubbleSkill
+              className="absolute -top-clamp-10vw -left-clamp-1vw w-clamp-18vw bg-[#FFF]"
+              classNameLanguage="text-[#FFD9DA]"
+              languageText="Astro"
+            />
+          </div>
+          <div class="absolute top-clamp-55vh left-clamp-52vw">
+            <BubbleSkill
+              languageImgSrc="/public/assets/images/skill/html.png"
+              className="absolute top-0 left-0 w-clamp-32vw bg-[#FFC6C7]"
+              classNameText="line-clamp-3"
+              text="「slick」や「gallery」の導入経験を持っています。これにより、動的なウェブページの実装やユーザー体験の向上が期待できます。"
+            />
+            <BubbleSkill
+              className="absolute -top-clamp-6vw left-clamp-22vw w-clamp-18vw bg-[#FFC6C7]"
+              languageText="Java<br />script"
+            />
+          </div>
         </div>
       </section>
-      <section class="mb-clamp-4vh px-clamp-5vw">
+      <section class="mb-clamp-6vh px-clamp-5vw">
         <TypographyH2 text="HISTORY" />
         <div class="relative h-clamp-71vh">
           <div
-            class="absolute top-clamp-30vh left-1/2 -translate-x-1/2 w-clamp-1.5vw h-clamp-80vw bg-[#FFC6C7] bg-opacity-50 rounded-md"
+            class="absolute top-clamp-54vw left-1/2 -translate-x-1/2 w-clamp-1.5vw h-clamp-42vh bg-[#FFC6C7] bg-opacity-50 rounded-md"
           >
           </div>
           <BallonHistory
             className="absolute top-clamp-0vh -left-clamp-1.5vw"
             isLeft={true}
             imgSrc="/assets/images/history/balloon-light-pink.png"
-            workplaceText="個人事業主としてWebエンジニア活動"
-          >
-            <li>
-              コーポレートサイトの実装
-              <br
-              />→WordPressでの構築、独自のアニメーション実装（TypeScript）に注力
-            </li>
-            <li>
-              商品紹介のLP制作
-              <br />→Astroを使いコンポーネント化や静的サイト生成の流れを理解
-            </li>
-            <li>
-              高校のホームページリニューアル
-              <br />→WordPressの構築、SEO対策を実施
-            </li>
-            <li>ChatbotのUI改修</li>
-          </BallonHistory>
+            workplaceText="個人事業主として<br />Webエンジニア活動"
+            Text="コーポレートサイトの実装、商品紹介のLP制作、高校のホームページリニューアル、ChatbotのUI改修"
+          />
           <BallonHistory
             className="absolute top-clamp-6vh -right-clamp-1.5vw"
             isLeft={false}
             imgSrc="/assets/images/history/balloon-dark-pink.png"
-            workplaceText="株式会社ネクストレベル"
-          >
-            <li>フロントエンドエンジニアとして、デザインを元にコーディング</li>
-            <li>メディアチームとコミュニケーションを取りながら改善を進行</li>
-            <li>広報チームとして外部とメールのやり取り</li>
-            <li>給与の振込み、検収業務、備品管理などの管理業務</li>
-          </BallonHistory>
+            workplaceText="株式会社<br />ネクストレベル"
+            Text="フロントエンドエンジニア、メディアチームとの連携、広報チームとしての業務、管理業務"
+          />
           <BallonHistory
             className="absolute top-clamp-30vh -left-clamp-1.5vw"
             isLeft={true}
             imgSrc="/assets/images/history/balloon-dark-pink.png"
-            workplaceText="株式会社千趣会 チャイルドケア えがおの森保育園"
-          >
-            <li>1歳児（2年間）、2歳児（1年間）の担任</li>
-            <li>保育計画立案</li>
-            <li>教材、製作準備</li>
-            <li>定期的な保護者面談、保育相談</li>
-            <li>計画、実践、反省、改善の繰り返し実施</li>
-            <li>行事のリーダー、計画立案、進行</li>
-            <li>ピアノ（リトミック、リズム運動）</li>
-          </BallonHistory>
+            workplaceText="株式会社千趣会<br />チャイルドケア<br />えがおの森保育園"
+            Text="幼児教育の担任、保育計画、教材準備、保護者面談、行事のリーダー、ピアノ指導"
+          />
           <BallonHistory
             className="absolute top-clamp-36vh -right-clamp-1.5vw"
             isLeft={false}
             imgSrc="/assets/images/history/balloon-light-pink.png"
-            workplaceText="学校法人 ひかり学園 第一ひかり幼稚園"
-          >
-            <li>未就園児クラスの副担任</li>
-            <li>全クラスの補助</li>
-            <li>遠足同行</li>
-            <li>お便り制作</li>
-          </BallonHistory>
+            workplaceText="学校法人<br />ひかり学園<br />第一ひかり幼稚園"
+            Text="幼稚園教諭としての副担任、クラス補助、遠足同行、お便り制作"
+          />
         </div>
       </section>
-      <section class="mb-clamp-4vh px-clamp-5vw">
+      <section class="mb-clamp-6vh px-clamp-5vw">
         <TypographyH2 text="WORK" />
         <div
           class="mx-auto w-clamp-80vw grid grid-cols-2 gap-x-clamp-6vw gap-y-clamp-4vh"
@@ -258,10 +282,12 @@ import "@styles/fonts.css";
         <SpeechBubble
           className="absolute -top-clamp-2vh -right-clamp-5vw w-clamp-22vw"
         />
-        <p class="ml-clamp-14vw w-clamp-50vw text-clamp-3vw text-white">
+        <p
+          class="tracking-widest ml-clamp-14vw w-clamp-50vw text-clamp-3vw text-white"
+        >
           HTML、CSS、Sass、JavaScript、WordPressなど、多彩なスキルを持ち、ウェブプロジェクトの成功に貢献してきました。あなたのウェブプロジェクトを実現しましょう。HPの制作を承ります。お気軽にご相談ください。
         </p>
-        <div class="flex justify-end mr-clamp-23vw mb-clamp-3vh">
+        <div class="flex justify-end mr-clamp-23vw mt-clamp-1.5vh mb-clamp-3vh">
           <div class="w-clamp-30vw">
             <img
               class="w-full"

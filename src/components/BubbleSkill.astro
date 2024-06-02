@@ -1,16 +1,20 @@
 ---
 interface Props {
   className: string;
-  classNameSkill?: string;
-  text: string;
-  skillText: string;
+  classNameLanguage?: string;
+  classNameText?: string;
+  text?: string;
+  languageText?: string;
+  languageImgSrc?: string;
 }
 
 const {
-  className,
-  classNameSkill = "text-white",
-  text,
-  skillText,
+  className = "",
+  classNameText = "",
+  classNameLanguage = "text-white",
+  text = "",
+  languageText = "",
+  languageImgSrc = "",
 } = Astro.props;
 ---
 
@@ -18,7 +22,29 @@ const {
   class=`bg-[length:40%] bg-center bg-no-repeat flex justify-center items-center aspect-square rounded-full shadow-md ${className}`
 >
   <div class="flex flex-col text-center">
-    <p class="w-[80%] text-clamp-2vw mx-auto">{text}</p>
-    <p class=`font-KumarOneRegular mt-clamp-2vh ${classNameSkill}`>{skillText}</p>
+    {
+      languageImgSrc && (
+        <div class="w-[30%] mx-auto mb-clamp-1vh">
+          <img class="w-full" src={languageImgSrc} alt="" />
+        </div>
+      )
+    }
+    {
+      text && (
+        <p
+          class={`w-[60%] tracking-widest text-clamp-3vw mx-auto ${classNameText}`}
+        >
+          {text}
+        </p>
+      )
+    }
+    {
+      languageText && (
+        <p
+          set:html={languageText}
+          class={`text-[3vw] font-KumarOneRegular mt-clamp-2vw ${classNameLanguage}`}
+        ></p>
+      )
+    }
   </div>
 </div>

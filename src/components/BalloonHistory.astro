@@ -2,16 +2,17 @@
 interface Props {
   imgSrc: string;
   workplaceText: string;
+  Text: string;
   className: string;
   isLeft: boolean;
 }
 
-const { imgSrc, workplaceText, className, isLeft } = Astro.props;
+const { imgSrc, workplaceText, Text, className, isLeft } = Astro.props;
 let imgClass = "";
-let textPos = "absolute top-clamp-4vh left-clamp-10vw";
+let textPos = "absolute top-clamp-3vh left-clamp-10vw";
 if (!isLeft) {
   imgClass = "scale-x-[-1] origin-center";
-  textPos = "absolute top-clamp-4vh left-clamp-15vw";
+  textPos = "absolute top-clamp-2vh left-clamp-15vw";
 }
 ---
 
@@ -21,12 +22,14 @@ if (!isLeft) {
       <img class="w-full" src={imgSrc} alt="" />
     </div>
     <div class=`${textPos}`>
-      <p class="w-clamp-24vw mb-clamp-1vh text-center text-clamp-2.5vw text-[#FF8BA7]">
-        {workplaceText}
-      </p>
-      <ul class="text-clamp-1vw w-clamp-20vw list-disc">
-        <slot />
-      </ul>
+      <p
+        set:html={workplaceText}
+        class="w-clamp-24vw mb-clamp-0.5vh text-center text-clamp-3vw text-[#FF8BA7]"
+      />
+      <p
+        set:html={Text}
+        class="line-clamp-3 text-clamp-2.5vw w-clamp-20vw"
+      />
     </div>
   </div>
 </div>
