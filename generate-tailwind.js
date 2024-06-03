@@ -90,7 +90,10 @@ function generateMediaQueriesForValues(values, vwInRem, vhInRem) {
   return mediaQueries;
 }
 
-const values = [2, 4, 6, 7, 8, 9, 12, 17, 20, 21, 22, 23, 28, 30, 62, 80];
+const values = [
+  2, 4, 6, 7, 8, 9, 12, 17, 20, 21, 22, 23, 26, 28, 30, 31, 33, 42, 51, 56, 60,
+  62, 69, 80,
+];
 const vhSpacing = generateClampStyle(0, 200, 0.1, "vh", vhInRem);
 const vwSpacing1 = generateClampStyle(2.92, 2.92, 0.1, "vw", vwInRem);
 const vwSpacing2 = generateClampStyle(0, 200, 0.1, "vw", vwInRem);
