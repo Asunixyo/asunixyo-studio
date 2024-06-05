@@ -1,0 +1,61 @@
+---
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+import SpeechBubble from "@components/SpeechBubble.astro";
+---
+
+<footer class="relative overflow-hidden pt-clamp-5vh h-auto bg-[#FFC6C7]">
+  <SpeechBubble
+    className="absolute top-clamp-1vh -left-clamp-28vw w-clamp-39vw"
+  />
+  <SpeechBubble
+    className="absolute top-clamp-18vh -left-clamp-5vw w-clamp-15vw"
+  />
+  <SpeechBubble
+    className="absolute top-clamp-19vh right-clamp-4vw w-clamp-18vw"
+  />
+  <SpeechBubble
+    className="absolute -top-clamp-2vh -right-clamp-5vw w-clamp-22vw"
+  />
+  <p
+    class="tracking-widest ml-clamp-14vw w-clamp-50vw text-clamp-3vw text-white"
+  >
+    HTML、CSS、Sass、JavaScript、WordPressなど、多彩なスキルを持ち、ウェブプロジェクトの成功に貢献してきました。あなたのウェブプロジェクトを実現しましょう。HPの制作を承ります。お気軽にご相談ください。
+  </p>
+  <div class="flex justify-end mr-clamp-23vw mt-clamp-1.5vh mb-clamp-3vh">
+    <div class="w-clamp-30vw">
+      <ResponsivePicture
+        className="w-full"
+        src="/assets/images/footer/contact"
+        alt="コンタクトへ"
+      />
+    </div>
+  </div>
+  <div class="pb-clamp-3vh">
+    <div class="gap-clamp-8vw flex items-center justify-center">
+      <a href="" target="_blank" class="w-clamp-8vw">
+        <ResponsivePicture
+          className="w-full"
+          src="/assets/images/footer/github"
+          alt="GitHub"
+        />
+      </a>
+      <a href="" target="_blank" class="w-clamp-11vw">
+        <ResponsivePicture
+          className="w-full"
+          src="/assets/images/footer/threads"
+          alt="Threads"
+        />
+      </a>
+      <a href="" target="_blank" class="w-clamp-8vw">
+        <ResponsivePicture
+          className="w-full"
+          src="/assets/images/footer/instagram"
+          alt="Instagram"
+        />
+      </a>
+    </div>
+    <p class="text-center text-clamp-3vw text-white">
+      &copy; 2024 Asunixyo Studio.
+    </p>
+  </div>
+</footer>
