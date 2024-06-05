@@ -44073,38 +44073,6 @@ export default {
         "clamp-3.33vw": "clamp(0rem, 3.33vw, 0.895rem)"
       },
       "fontFamily": {
-        "gothic-mb101-l": [
-          "\"Gothic MB101 L\"",
-          "sans-serif"
-        ],
-        "gothic-mb101-r": [
-          "\"Gothic MB101 R\"",
-          "sans-serif"
-        ],
-        "gothic-mb101-m": [
-          "\"Gothic MB101 M\"",
-          "sans-serif"
-        ],
-        "gothic-mb101-db": [
-          "\"Gothic MB101 DB\"",
-          "sans-serif"
-        ],
-        "gothic-mb101-b": [
-          "\"Gothic MB101 B\"",
-          "sans-serif"
-        ],
-        "gothic-mb101-h": [
-          "\"Gothic MB101 H\"",
-          "sans-serif"
-        ],
-        "gothic-mb101-u": [
-          "\"Gothic MB101 U\"",
-          "sans-serif"
-        ],
-        "notoSerifJP": [
-          "\"Noto Serif JP\"",
-          "serif"
-        ],
         "NotoSansJPBlack": [
           "\"NotoSansJP Black\""
         ],
@@ -44131,27 +44099,6 @@ export default {
         ],
         "NotoSansJPThin": [
           "\"NotoSansJP Thin\""
-        ],
-        "07lightnovelpop": [
-          "\"07LightNovelPOP\""
-        ],
-        "AbhayaLibreBold": [
-          "\"AbhayaLibre Bold\""
-        ],
-        "AbhayaLibreExtraBold": [
-          "\"AbhayaLibre ExtraBold\""
-        ],
-        "AbhayaLibreMedium": [
-          "\"AbhayaLibre Medium\""
-        ],
-        "AbhayaLibreRegular": [
-          "\"AbhayaLibre Regular\""
-        ],
-        "AbhayaLibreSemiBold": [
-          "\"AbhayaLibre SemiBold\""
-        ],
-        "CorporateLogoMedium": [
-          "\"Corporate Logo Medium ver3\""
         ],
         "KumarOneRegular": [
           "\"KumarOne Regular\""

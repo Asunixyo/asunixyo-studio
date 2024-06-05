@@ -4,8 +4,56 @@
     url("/assets/fonts/KumarOne/KumarOne-Regular.woff") format("woff");
 }
 
-/* @font-face {
-  font-family: "07LightNovelPOP";
-  src: url("/assets/fonts/07-light-novel-pop/07LightNovelPOP.woff2") format("woff2"),
-    url("/assets/fonts/07-light-novel-pop/07LightNovelPOP.woff") format("woff");
-} */
+@font-face {
+  font-family: "NotoSansJP Black";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-Black.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP Bold";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-Bold.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP ExtraBold";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-ExtraBold.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP ExtraLight";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-ExtraLight.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP Light";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-Light.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP Medium";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-Medium.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP Regular";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-Regular.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP SemiBold";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-SemiBold.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansJP Thin";
+  src: url("/assets/fonts/NotoSansJP/NotoSansJP-Thin.woff2") format("woff2"),
+    url("/assets/fonts/NotoSansJP/NotoSansJP-Thin.woff") format("woff");
+}
