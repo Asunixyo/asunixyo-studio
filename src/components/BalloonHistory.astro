@@ -1,13 +1,21 @@
 ---
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+
 interface Props {
-  imgSrc: string;
+  imgSrcNotExtension: string;
   workplaceText: string;
   Text: string;
   className: string;
   isLeft: boolean;
 }
 
-const { imgSrc, workplaceText, Text, className, isLeft } = Astro.props;
+const {
+  imgSrcNotExtension,
+  workplaceText,
+  Text,
+  className,
+  isLeft,
+} = Astro.props;
 let imgClass = "";
 let textPos = "absolute top-clamp-3vh left-clamp-10vw";
 if (!isLeft) {
@@ -19,17 +27,18 @@ if (!isLeft) {
 <div class=`${className}`>
   <div class="relative">
     <div class=`w-clamp-47vw ${imgClass}`>
-      <img class="w-full" src={imgSrc} alt="" />
+      <ResponsivePicture
+        className="w-full"
+        src={imgSrcNotExtension}
+        alt="バルーン"
+      />
     </div>
     <div class=`${textPos}`>
       <p
         set:html={workplaceText}
         class="w-clamp-24vw mb-clamp-0.5vh text-center text-clamp-3vw text-[#FF8BA7]"
       />
-      <p
-        set:html={Text}
-        class="line-clamp-3 text-clamp-2.5vw w-clamp-20vw"
-      />
+      <p set:html={Text} class="line-clamp-3 text-clamp-2.5vw w-clamp-20vw" />
     </div>
   </div>
 </div>

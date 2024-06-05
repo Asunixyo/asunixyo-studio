@@ -12,7 +12,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Asunixyo Studioへようこそ。フロントエンドエンジニアとして、Webサイトやロゴ、チラシ制作を行っています。最新のプロジェクトや技術スキルを紹介しています。"
+      content="Asunixyo Studioへようこそ。フロントエンドエンジニアとして、ホームページやLP、ロゴ、チラシ制作を行っています。最新のプロジェクトや技術スキルを紹介しています。"
     />
     <meta name="viewport" content="width=430px" />
     <link
@@ -67,6 +67,7 @@ const { title } = Astro.props;
       type="image/x-icon"
       href="https://asunixyo-studio.netlify.app/assets/favicon.ico"
     />
+    <link rel="icon" type="image/png" href="/assets/favicon-64x64.png" />
     <link rel="manifest" href="/assets/site.webmanifest" />
     <link
       rel="mask-icon"
@@ -80,6 +81,25 @@ const { title } = Astro.props;
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
+    <!-- Facebook Open Graph -->
+    <!-- <meta property="og:title" content="Welcome to Asunixyo Studio." />
+    <meta
+      property="og:description"
+      content="フロントエンドエンジニアとして、ホームページやLP、ロゴ、チラシ制作を行っています。"
+    />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta property="og:url" content="https://asunixyo-studio.netlify.app/" />
+    <meta property="og:type" content="website" /> -->
+
+    <!-- Twitter Card -->
+    <!-- <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Welcome to Asunixyo Studio." />
+    <meta
+      name="twitter:description"
+      content="フロントエンドエンジニアとして、ホームページやLP、ロゴ、チラシ制作を行っています。"
+    />
+    <meta name="twitter:image" content="/assets/twitter-image.png" />
+    <meta name="twitter:site" content="@asu__nixyo" /> -->
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>

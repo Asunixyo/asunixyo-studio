@@ -1,11 +1,13 @@
 ---
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+
 interface Props {
   link: string;
   text: string;
-  imgSrc: string;
+  imgSrcNotExtension: string;
 }
 
-const { link, text, imgSrc } = Astro.props;
+const { link, text, imgSrcNotExtension } = Astro.props;
 ---
 
 <div class="flex flex-col items-center">
@@ -17,7 +19,11 @@ const { link, text, imgSrc } = Astro.props;
     <div
       class="absolute w-[65%] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full overflow-hidden"
     >
-      <img class="w-full" src={imgSrc} alt="" />
+      <ResponsivePicture
+        className="w-full"
+        src={imgSrcNotExtension}
+        alt={text}
+      />
     </div>
   </a>
   <p class="whitespace-nowrap mt-clamp-2vh text-clamp-3vw">{text}</p>

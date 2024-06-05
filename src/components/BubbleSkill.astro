@@ -1,11 +1,14 @@
 ---
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+
 interface Props {
   className: string;
   classNameLanguage?: string;
   classNameText?: string;
   text?: string;
   languageText?: string;
-  languageImgSrc?: string;
+  languageImgSrcNotExtension?: string;
+  alt?: string;
 }
 
 const {
@@ -14,7 +17,8 @@ const {
   classNameLanguage = "text-white",
   text = "",
   languageText = "",
-  languageImgSrc = "",
+  languageImgSrcNotExtension = "",
+  alt = "",
 } = Astro.props;
 ---
 
@@ -23,9 +27,13 @@ const {
 >
   <div class="flex flex-col text-center">
     {
-      languageImgSrc && (
+      languageImgSrcNotExtension && (
         <div class="w-[30%] mx-auto mb-clamp-1vh">
-          <img class="w-full" src={languageImgSrc} alt="" />
+          <ResponsivePicture
+            className="w-full"
+            src={languageImgSrcNotExtension}
+            alt={alt}
+          />
         </div>
       )
     }
@@ -43,7 +51,7 @@ const {
         <p
           set:html={languageText}
           class={`text-clamp-3vw font-KumarOneRegular mt-clamp-2vw ${classNameLanguage}`}
-        ></p>
+        />
       )
     }
   </div>

@@ -6,6 +6,7 @@ import TypographyH2 from "@components/TypographyH2.astro";
 import BubbleSkill from "@components/BubbleSkill.astro";
 import BallonHistory from "@components/BalloonHistory.astro";
 import BubbleWork from "@components/BubbleWork.astro";
+import ResponsivePicture from "@components/ResponsivePicture.astro";
 import "@styles/clamps.css";
 import "@styles/fonts.css";
 ---
@@ -17,13 +18,17 @@ import "@styles/fonts.css";
         class="flex justify-between items-center px-clamp-5vw py-clamp-2vh"
       >
         <div class="w-clamp-28vw-14.9vh">
-          <img class="w-full" src="/assets/images/header/logo.png" alt="" />
+          <ResponsivePicture
+            className="w-full"
+            src="/assets/images/header/logo"
+            alt="ロゴ"
+          />
         </div>
         <div class="w-clamp-9vw-4.8vh">
           <img
             class="w-full"
-            src="/assets/images/header/humberger.png"
-            alt=""
+            src="/assets/images/header/hamburger.png"
+            alt="メニュー"
           />
         </div>
       </header>
@@ -52,20 +57,20 @@ import "@styles/fonts.css";
           />
           <div class="w-full pt-clamp-9vh absolute z-10 flex justify-center">
             <div class="w-clamp-80vw-42.6vh">
-              <img
-                class="w-full"
-                src="/assets/images/first-view/title.png"
-                alt=""
+              <ResponsivePicture
+                className="w-full"
+                src="/assets/images/first-view/title"
+                alt="タイトル"
               />
             </div>
           </div>
         </div>
         <div class="relative">
           <div class="pt-clamp-55vh w-clamp-30vw-16.0vh">
-            <img
-              class="w-full"
-              src="/assets/images/first-view/balloon-kids.png"
-              alt=""
+            <ResponsivePicture
+              className="w-full"
+              src="/assets/images/first-view/balloon-kids"
+              alt="風船を持った男の子"
             />
           </div>
           <SpeechBubble
@@ -99,10 +104,10 @@ import "@styles/fonts.css";
         <div class="flex flex-col justify-center mt-clamp-3vh">
           <p class="mx-auto text-clamp-4vw-2.1vh">see more</p>
           <div class="mx-auto pt-clamp-3vh w-clamp-2vw-1.1vh">
-            <img
-              class="w-full"
-              src="/assets/images/first-view/down-allow.png"
-              alt=""
+            <ResponsivePicture
+              className="w-full"
+              src="/assets/images/first-view/down-allow"
+              alt="矢印"
             />
           </div>
         </div>
@@ -114,19 +119,19 @@ import "@styles/fonts.css";
         <div class="flex justify-center">
           <div class="relative w-clamp-80vw">
             <div class="absolute -top-clamp-1vw right-clamp-6vw w-clamp-50vw">
-              <img
-                class="w-full rounded-full"
-                src="/assets/images/about/me.jpg"
-                alt=""
+              <ResponsivePicture
+                className="w-full rounded-full"
+                src="/assets/images/about/me"
+                alt="自分の写真"
               />
             </div>
             <div
               class="absolute top-clamp-24vw left-clamp-8vw w-clamp-29vw rounded-md"
             >
-              <img
-                class="w-full rounded-full"
-                src="/assets/images/about/cat.jpg"
-                alt=""
+              <ResponsivePicture
+                className="w-full rounded-full"
+                src="/assets/images/about/cat"
+                alt="猫の肉球"
               />
             </div>
             <div class="text-clamp-4vw pt-clamp-60vw tracking-widest">
@@ -145,7 +150,8 @@ import "@styles/fonts.css";
         <div class="relative h-clamp-71vh">
           <div class="absolute top-clamp-0vh -left-clamp-2vw">
             <BubbleSkill
-              languageImgSrc="/assets/images/skill/html.png"
+              languageImgSrcNotExtension="/assets/images/skill/html"
+              alt="html"
               className="line-clamp-3 absolute top-0 left-0 w-clamp-49vw bg-[#FFC6C7]"
               classNameText="line-clamp-3"
               text="半年間の実務経験を通じて、パーツ単位から全体のレイアウトまでのデザインを実現する能力を磨き上げました。特に、レスポンシブデザインにも対応し、様々なデバイスでの閲覧を考慮したレイアウト作成が得意です。"
@@ -157,7 +163,8 @@ import "@styles/fonts.css";
           </div>
           <div class="absolute top-clamp-3vh left-clamp-60vw">
             <BubbleSkill
-              languageImgSrc="/assets/images/skill/css.png"
+              languageImgSrcNotExtension="/assets/images/skill/css"
+              alt="css"
               className="absolute top-0 left-0 w-clamp-29vw bg-[#FFD9DA]"
               classNameText="line-clamp-2"
               text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
@@ -169,7 +176,8 @@ import "@styles/fonts.css";
           </div>
           <div class="absolute top-clamp-28vh left-clamp-30vw">
             <BubbleSkill
-              languageImgSrc="/assets/images/skill/wordpress.png"
+              languageImgSrcNotExtension="/assets/images/skill/wordpress"
+              alt="wordpress"
               className="absolute top-0 left-0 w-clamp-44vw bg-[#FFD9DA]"
               classNameText="line-clamp-3"
               text="ショートコードの知見を持っており、今後はWordPressの高度なカスタマイズやテーマ作成にも挑戦していく予定です。"
@@ -181,7 +189,8 @@ import "@styles/fonts.css";
           </div>
           <div class="absolute top-clamp-44vh -left-clamp-1vw">
             <BubbleSkill
-              languageImgSrc="/assets/images/skill/astro.png"
+              languageImgSrcNotExtension="/assets/images/skill/astro"
+              alt="astro"
               className="absolute top-0 left-0 w-clamp-33vw bg-[#FFF]"
               classNameLanguage="text-[#FFD9DA]"
               classNameText="line-clamp-2"
@@ -195,7 +204,8 @@ import "@styles/fonts.css";
           </div>
           <div class="absolute top-clamp-55vh left-clamp-52vw">
             <BubbleSkill
-              languageImgSrc="/assets/images/skill/javascript.png"
+              languageImgSrcNotExtension="/assets/images/skill/javascript"
+              alt="javascript"
               className="absolute top-0 left-0 w-clamp-32vw bg-[#FFC6C7]"
               classNameText="line-clamp-3"
               text="「slick」や「gallery」の導入経験を持っています。これにより、動的なウェブページの実装やユーザー体験の向上が期待できます。"
@@ -217,28 +227,28 @@ import "@styles/fonts.css";
           <BallonHistory
             className="absolute top-clamp-0vh -left-clamp-1.5vw"
             isLeft={true}
-            imgSrc="/assets/images/history/balloon-light-pink.png"
+            imgSrcNotExtension="/assets/images/history/balloon-light-pink"
             workplaceText="個人事業主として<br />Webエンジニア活動"
             Text="コーポレートサイトの実装、商品紹介のLP制作、高校のホームページリニューアル、ChatbotのUI改修"
           />
           <BallonHistory
             className="absolute top-clamp-6vh -right-clamp-1.5vw"
             isLeft={false}
-            imgSrc="/assets/images/history/balloon-dark-pink.png"
+            imgSrcNotExtension="/assets/images/history/balloon-dark-pink"
             workplaceText="株式会社<br />ネクストレベル"
             Text="フロントエンドエンジニア、メディアチームとの連携、広報チームとしての業務、管理業務"
           />
           <BallonHistory
             className="absolute top-clamp-30vh -left-clamp-1.5vw"
             isLeft={true}
-            imgSrc="/assets/images/history/balloon-dark-pink.png"
+            imgSrcNotExtension="/assets/images/history/balloon-dark-pink"
             workplaceText="株式会社千趣会<br />チャイルドケア<br />えがおの森保育園"
             Text="幼児教育の担任、保育計画、教材準備、保護者面談、行事のリーダー、ピアノ指導"
           />
           <BallonHistory
             className="absolute top-clamp-36vh -right-clamp-1.5vw"
             isLeft={false}
-            imgSrc="/assets/images/history/balloon-light-pink.png"
+            imgSrcNotExtension="/assets/images/history/balloon-light-pink"
             workplaceText="学校法人<br />ひかり学園<br />第一ひかり幼稚園"
             Text="幼稚園教諭としての副担任、クラス補助、遠足同行、お便り制作"
           />
@@ -251,29 +261,27 @@ import "@styles/fonts.css";
         >
           <BubbleWork
             link="https://reqkaji.com/"
-            imgSrc="/assets/images/work/work-1.png"
+            imgSrcNotExtension="/assets/images/work/work-1"
             text="コーポレートサイトの実装"
           />
           <BubbleWork
             link="https://kgcoutougakuin-setagaya.tokyo/"
-            imgSrc="/assets/images/work/work-2.png"
+            imgSrcNotExtension="/assets/images/work/work-2"
             text="高校のホームページ制作"
           />
           <BubbleWork
             link="https://www.e-namaco.com/lp/001/"
-            imgSrc="/assets/images/work/work-3.png"
+            imgSrcNotExtension="/assets/images/work/work-3"
             text="商品紹介LP制作"
           />
           <BubbleWork
             link="https://asunixyo.com/"
-            imgSrc="/assets/images/work/work-4.png"
+            imgSrcNotExtension="/assets/images/work/work-4"
             text="ポートフォリオ（WordPress）"
           />
         </div>
       </section>
-      <footer
-        class="relative overflow-hidden pt-clamp-5vh h-auto bg-[#FFC6C7]"
-      >
+      <footer class="relative overflow-hidden pt-clamp-5vh h-auto bg-[#FFC6C7]">
         <SpeechBubble
           className="absolute top-clamp-1vh -left-clamp-28vw w-clamp-39vw"
         />
@@ -293,34 +301,34 @@ import "@styles/fonts.css";
         </p>
         <div class="flex justify-end mr-clamp-23vw mt-clamp-1.5vh mb-clamp-3vh">
           <div class="w-clamp-30vw">
-            <img
-              class="w-full"
-              src="/assets/images/footer/contact.png"
-              alt=""
+            <ResponsivePicture
+              className="w-full"
+              src="/assets/images/footer/contact"
+              alt="コンタクトへ"
             />
           </div>
         </div>
         <div class="pb-clamp-3vh">
           <div class="gap-clamp-8vw flex items-center justify-center">
             <a href="" target="_blank" class="w-clamp-8vw">
-              <img
-                class="w-full"
-                src="/assets/images/footer/github.png"
-                alt=""
+              <ResponsivePicture
+                className="w-full"
+                src="/assets/images/footer/github"
+                alt="GitHub"
               />
             </a>
             <a href="" target="_blank" class="w-clamp-11vw">
-              <img
-                class="w-full"
-                src="/assets/images/footer/threads.png"
-                alt=""
+              <ResponsivePicture
+                className="w-full"
+                src="/assets/images/footer/threads"
+                alt="Threads"
               />
             </a>
             <a href="" target="_blank" class="w-clamp-8vw">
-              <img
-                class="w-full"
-                src="/assets/images/footer/instagram.png"
-                alt=""
+              <ResponsivePicture
+                className="w-full"
+                src="/assets/images/footer/instagram"
+                alt="Instagram"
               />
             </a>
           </div>

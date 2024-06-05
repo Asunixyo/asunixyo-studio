@@ -1,0 +1,56 @@
+---
+interface Props {
+  idName?: string;
+  breakpoint?: number;
+  className?: string;
+  src: string;
+  largeScale?: number;
+  smallScale?: number;
+  loading?: "eager" | "lazy" | "";
+  alt: string;
+}
+
+const {
+  idName = "",
+  breakpoint = 768,
+  className = "",
+  src,
+  largeScale = 4,
+  smallScale = 2,
+  loading = "lazy",
+  alt,
+} = Astro.props;
+
+const largeImageWebp =
+  largeScale > 1 ? `${src}@${largeScale}x.webp` : `${src}.webp`;
+const largeImagePng =
+  largeScale > 1 ? `${src}@${largeScale}x.png` : `${src}.png`;
+const smallImageWebp =
+  smallScale > 1 ? `${src}@${smallScale}x.webp` : `${src}.webp`;
+const smallImagePng =
+  smallScale > 1 ? `${src}@${smallScale}x.png` : `${src}.png`;
+---
+
+<picture>
+  <source
+    media={`(min-width: ${breakpoint}px)`}
+    srcset={largeImageWebp}
+    type="image/webp"
+  />
+  <source
+    media={`(min-width: ${breakpoint}px)`}
+    srcset={largeImagePng}
+    type="image/png"
+  />
+
+  <source srcset={smallImageWebp} type="image/webp" />
+  <source srcset={smallImagePng} type="image/png" />
+
+  <img
+    id={idName}
+    src={smallImagePng}
+    class={className}
+    loading={loading || undefined}
+    alt={alt}
+  />
+</picture>
