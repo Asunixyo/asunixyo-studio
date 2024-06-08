@@ -6,13 +6,13 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<div class=`relative ${className}`>
+<div class=`relative aspect-square h-full ${className}`>
   <div
-    class="z-10 absolute top-[2.8vh] right-[16vw] w-[5vw] aspect-square rounded-full bg-[#FFC6C7] border-[#FFC6C7] border-2"
+    class="z-10 absolute top-[0%] right-[0%] w-[90%] aspect-square rounded-full bg-[#FFC6C7] border-[#FFC6C7] border-2"
   >
   </div>
   <div
-    class="absolute top-[4vh] right-[19.8vw] w-[3vw] aspect-square rounded-full bg-[#FFD9DA] border-[#FFD9DA] border-2 opacity-80"
+    class="absolute bottom-[0%] left-[0%] w-[40%] aspect-square rounded-full bg-[#FFD9DA] border-[#FFD9DA] border-2 opacity-80"
   >
   </div>
 </div>

@@ -1,0 +1,17 @@
+---
+import TwoBubbles from "@components/TwoBubbles.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="flex items-center gap-[2vw]">
+  <div
+    class="w-[3vw] h-full aspect-square rounded-full bg-[#FFC6C7] opacity-80"
+  >
+  </div>
+  <p class="font-NotoSansJPBold text-[3vw]">{title}</p>
+</div>

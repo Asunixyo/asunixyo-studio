@@ -1,29 +1,17 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Header from "@layouts/Header.astro";
-import Bubble from "@components/Bubble.astro";
-import SpeechBubble from "@components/SpeechBubble.astro";
-import TypographyH2 from "@components/TypographyH2.astro";
-import BubbleSkill from "@components/BubbleSkill.astro";
-import BallonHistory from "@components/BalloonHistory.astro";
-import BubbleWork from "@components/BubbleWork.astro";
-import ResponsivePicture from "@components/ResponsivePicture.astro";
-import TwoBubbles from "@components/TwoBubbles.astro";
+import WorkTittle from "@components/WorkTittle.astro";
+import ListContent from "@components/ListContent.astro";
 import "@styles/clamps.css";
 import "@styles/fonts.css";
 ---
 
 <Layout title="Welcome to Asunixyo Studio.">
-  <!-- <div class="h-screen max-[430px]:h-lvh"> -->
   <Header />
   <div class="overflow-x-hidden">
     <div class="px-[5vw]">
-      <p
-        class="text-center mr-[3vw] mt-[3vh] mb-[1vh] font-NotoSansJPBold text-[3.7vw] text-[#FF8BA7]"
-      >
-        コーポレートサイトの実装
-      </p>
-      <TwoBubbles className="w-[5%]" />
+      <WorkTittle text="コーポレートサイトの実装" />
       <div class="flex justify-center items-center mb-[3vh]">
         <div class="w-full">
           <img
@@ -33,29 +21,18 @@ import "@styles/fonts.css";
           />
         </div>
       </div>
-      <div class="relative">
-        <div class="ml-[5vw] mb-[3vh]">
-          <div
-            class="absolute top-[0.4vh] left-[0vw] w-[3vw] aspect-square rounded-full bg-[#FFC6C7] opacity-80"
-          >
-          </div>
-          <p class="font-NotoSansJPBold text-[3vw]">WordPressで構築</p>
-          <p class="leading-[3vh] text-[3vw]">
-            index.php、archive.phpなどの構成で構築
-          </p>
-        </div>
-        <div class="ml-[5vw] mb-[3vh]">
-          <div
-            class="absolute top-[8.6vh] left-[0vw] w-[3vw] aspect-square rounded-full bg-[#FFC6C7] opacity-80"
-          >
-          </div>
-          <p class="font-NotoSansJPBold text-[3vw]">
-            独自のアニメーション実装（TypeScript）
-          </p>
-          <p class="leading-[3vh] text-[3vw]">dot font の実装</p>
-        </div>
-      </div>
+      <ul>
+        <ListContent
+          className="mb-[3vh]"
+          title="WordPressで構築"
+          text="index.php、archive.phpなどの構成で構築"
+        />
+        <ListContent
+          className="mb-[3vh]"
+          title="独自のアニメーション実装（TypeScript）"
+          text="dot font の実装"
+        />
+      </ul>
     </div>
   </div>
-  <!-- </div> -->
 </Layout>
