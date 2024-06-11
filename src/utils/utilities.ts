@@ -410,6 +410,60 @@ class FormatText {
   }
 }
 
+class VwRangeCalculator {
+  private screenWidth: number;
+  private vwValue: number;
+  private maxWidth: number;
+
+  constructor(screenWidth: number, vwValue: number, maxWidth: number) {
+    this.screenWidth = screenWidth;
+    this.vwValue = vwValue;
+    this.maxWidth = maxWidth;
+  }
+
+  public calculate(): number {
+    const limitedScreenWidth = Math.min(this.screenWidth, this.maxWidth);
+    const pxPerVw = limitedScreenWidth / 100;
+    const maxPxValue = 100 * pxPerVw;
+
+    console.log(this.vwValue);
+    if (this.vwValue < 0) {
+      return 0;
+    } else if (this.vwValue > 100) {
+      return maxPxValue;
+    } else {
+      return this.vwValue * pxPerVw;
+    }
+  }
+}
+
+class VhRangeCalculator {
+  private screenHeight: number;
+  private vhValue: number;
+  private maxHeight: number;
+
+  constructor(screenHeight: number, vhValue: number, maxHeight: number) {
+    this.screenHeight = screenHeight;
+    this.vhValue = vhValue;
+    this.maxHeight = maxHeight;
+  }
+
+  public calculate(): number {
+    const limitedScreenHeight = Math.min(this.screenHeight, this.maxHeight);
+    const pxPerVh = limitedScreenHeight / 100;
+    const maxPxValue = 100 * pxPerVh;
+
+    console.log(this.vhValue);
+    if (this.vhValue < 0) {
+      return 0;
+    } else if (this.vhValue > 100) {
+      return maxPxValue;
+    } else {
+      return this.vhValue * pxPerVh;
+    }
+  }
+}
+
 export type { Breakpoints };
 export {
   WordPressApi,
@@ -418,4 +472,6 @@ export {
   MathUtils,
   FormatData,
   FormatText,
+  VwRangeCalculator,
+  VhRangeCalculator,
 };

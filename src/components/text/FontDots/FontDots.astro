@@ -6,10 +6,11 @@ interface Props {
   className: string;
   text: string;
   fontFamily: string[];
-  fontSize: number;
-  paddingRight: number;
-  paddingLeft: number;
-  paddingY: number;
+  vwFontSize: number;
+  maxWidth: number;
+  vwPaddingRight: number;
+  vwPaddingLeft: number;
+  vhPaddingY: number;
   spacing: number;
   minRadius: number;
   maxRadius: number;
@@ -33,10 +34,11 @@ const {
   className,
   text,
   fontFamily,
-  fontSize,
-  paddingRight,
-  paddingLeft,
-  paddingY,
+  maxWidth,
+  vwFontSize,
+  vwPaddingRight,
+  vwPaddingLeft,
+  vhPaddingY,
   spacing,
   minRadius,
   maxRadius,
@@ -60,23 +62,23 @@ const breakpointsFont: Breakpoints = {
   "2xs": 1,
   xs: 1,
   sm: 1,
-  md: 0.5,
-  lg: 0.5,
-  xl: 0.8,
-  "2xl": 0.8,
-  "3xl": 0.8,
+  md: 1,
+  lg: 1,
+  xl: 1,
+  "2xl": 1,
+  "3xl": 1,
 };
 
 const breakpointsPaddingX: Breakpoints = {
-  "3xs": 0,
-  "2xs": 0,
-  xs: 0,
-  sm: 0,
-  md: 0,
-  lg: 0,
-  xl: 0,
-  "2xl": 0,
-  "3xl": 0,
+  "3xs": 1,
+  "2xs": 1,
+  xs: 1,
+  sm: 1,
+  md: 1,
+  lg: 1,
+  xl: 1,
+  "2xl": 1,
+  "3xl": 1,
 };
 ---
 
@@ -87,10 +89,11 @@ const breakpointsPaddingX: Breakpoints = {
     idName,
     text,
     fontFamily,
-    fontSize,
-    paddingRight,
-    paddingLeft,
-    paddingY,
+    vwFontSize,
+    maxWidth,
+    vwPaddingRight,
+    vwPaddingLeft,
+    vhPaddingY,
     spacing,
     minRadius,
     maxRadius,
@@ -120,15 +123,16 @@ const breakpointsPaddingX: Breakpoints = {
   }
   const fontDots = new FontDots(
     dotFontCanvas,
-    fontSize,
+    vwFontSize,
+    maxWidth,
     fontFamily,
     text,
     gradientType,
     gradientStartColor,
     gradientEndColor,
-    paddingRight,
-    paddingLeft,
-    paddingY,
+    vwPaddingRight,
+    vwPaddingLeft,
+    vhPaddingY,
     textAlign,
     textBaseline,
     fullScreen,

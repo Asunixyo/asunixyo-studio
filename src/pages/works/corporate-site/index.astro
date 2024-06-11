@@ -32,7 +32,7 @@ import "@styles/fonts.css";
           className="mb-clamp-3vh"
           title="dot font の実装（TypeScript）"
         />
-        <div class="relative py-[10vh]">
+        <!-- <div class="relative py-[10vh]">
           <FontDots
             idName="dotFontCanvas"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -59,6 +59,70 @@ import "@styles/fonts.css";
             moveSpeed={0.3}
             animationDelay={1000}
           />
+        </div> -->
+        <div class="relative py-[10vh] w-full mx-auto">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <FontDots
+              idName="dotFontCanvasFirst"
+              className=""
+              text="Welcome to"
+              fontFamily={["KumarOne Regular"]}
+              maxWidth={430}
+              vwFontSize={10}
+              vwPaddingRight={15}
+              vwPaddingLeft={15}
+              vhPaddingY={0}
+              spacing={3.6}
+              minRadius={1.5}
+              maxRadius={1.5}
+              hoverDistance={100}
+              hoverOffset={100}
+              lerpSpeed={0.07}
+              vibrationDirection={0.5}
+              gradientType="gradient-horizontal"
+              gradientStartColor="#FF8BA7"
+              gradientEndColor="#FF8BA7"
+              textAlign="center"
+              textBaseline="top"
+              fullScreen={false}
+              moveDirection="allDirections"
+              moveSpeed={0.3}
+              animationDelay={1000}
+            />
+          </div>
+          <div
+            class="absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <FontDots
+              idName="dotFontCanvasSecond"
+              className=""
+              text="Nexunity"
+              fontFamily={["KumarOne Regular"]}
+              maxWidth={430}
+              vwFontSize={10}
+              vwPaddingRight={10}
+              vwPaddingLeft={10}
+              vhPaddingY={0}
+              spacing={3.6}
+              minRadius={1.5}
+              maxRadius={1.5}
+              hoverDistance={100}
+              hoverOffset={100}
+              lerpSpeed={0.07}
+              vibrationDirection={0.5}
+              gradientType="gradient-horizontal"
+              gradientStartColor="#FF8BA7"
+              gradientEndColor="#FF8BA7"
+              textAlign="center"
+              textBaseline="top"
+              fullScreen={false}
+              moveDirection="allDirections"
+              moveSpeed={0.3}
+              animationDelay={1000}
+            />
+          </div>
         </div>
         <ListContent
           className="mb-clamp-3vh"

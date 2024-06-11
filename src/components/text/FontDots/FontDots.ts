@@ -1,4 +1,4 @@
-import { ResponsiveValue } from "@utils/utilities.ts";
+import { ResponsiveValue, VwRangeCalculator, VhRangeCalculator } from "@utils/utilities.ts";
 import type { Breakpoints } from "@utils/utilities.ts";
 
 /**
@@ -11,15 +11,16 @@ class FontDots {
   private dots: Dot[] = [];
 
   // Properties related to text and canvas appearance
-  private fontSize: number;
+  private maxWidth: number;
+  private vwFontSize: number;
   private fontFamily: string;
   private text: string;
   private gradientType: string;
   private gradientStartColor: string;
   private gradientEndColor: string;
-  private paddingRight: number;
-  private paddingLeft: number;
-  private paddingY: number;
+  private vwPaddingRight: number;
+  private vwPaddingLeft: number;
+  private vhPaddingY: number;
   private textAlign: CanvasTextAlign;
   private textBaseline: CanvasTextBaseline;
   private fullScreen: boolean;
@@ -43,15 +44,16 @@ class FontDots {
   /**
    * Constructor for the FontDots class.
    * @param canvas - The canvas element where the text and dots will be rendered.
-   * @param fontSize - Size of the text font.
+   * @param vwFontSize - Size of the text font.
+   * @param maxWidth - Maximum width of the content.
    * @param fontFamily - Family of the text font.
    * @param text - The text to be displayed.
    * @param gradientType - The type of gradient for text color.
    * @param gradientStartColor - The starting color of the gradient.
    * @param gradientEndColor - The ending color of the gradient.
-   * @param paddingRight - Horizontal padding.
-   * @param paddingLeft - Horizontal padding.
-   * @param paddingY - Vertical padding.
+   * @param vwPaddingRight - Horizontal padding.
+   * @param vwPaddingLeft - Horizontal padding.
+   * @param vhPaddingY - Vertical padding.
    * @param textAlign - Horizontal alignment of the text.
    * @param textBaseline - Vertical alignment of the text.
    * @param fullScreen - Whether the canvas should be displayed in full screen.
@@ -70,15 +72,16 @@ class FontDots {
    */
   constructor(
     private canvas: HTMLCanvasElement,
-    fontSize: number,
+    maxWidth: number,
+    vwFontSize: number,
     fontFamily: string,
     text: string,
     gradientType: string,
     gradientStartColor: string,
     gradientEndColor: string,
-    paddingRight: number = 0,
-    paddingLeft: number = 0,
-    paddingY: number = 0,
+    vwPaddingRight: number = 0,
+    vwPaddingLeft: number = 0,
+    vhPaddingY: number = 0,
     textAlign: CanvasTextAlign,
     textBaseline: CanvasTextBaseline,
     fullScreen: boolean = false,
@@ -95,17 +98,18 @@ class FontDots {
     lerpSpeed: number,
     animationDelay: number
   ) {
-    this.ctx = canvas.getContext("2d")!;
+    this.ctx = canvas.getContext('2d')!;
     this.state = { mouseX: null, mouseY: null };
-    this.fontSize = fontSize;
+    this.vwFontSize = vwFontSize;
+    this.maxWidth = maxWidth;
     this.fontFamily = fontFamily;
     this.text = text;
     this.gradientType = gradientType;
     this.gradientStartColor = gradientStartColor;
     this.gradientEndColor = gradientEndColor;
-    this.paddingRight = paddingRight;
-    this.paddingLeft = paddingLeft;
-    this.paddingY = paddingY;
+    this.vwPaddingRight = vwPaddingRight;
+    this.vwPaddingLeft = vwPaddingLeft;
+    this.vhPaddingY = vhPaddingY;
     this.textAlign = textAlign;
     this.textBaseline = textBaseline;
     this.fullScreen = fullScreen;
@@ -133,7 +137,7 @@ class FontDots {
       this.setupCanvasAndDots(this.animationDelay);
     };
 
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       this.setupCanvasAndDots();
     });
 
@@ -143,15 +147,16 @@ class FontDots {
   private setupCanvasAndDots(delay: number = 0): void {
     setTimeout(() => {
       this.initializeCanvas(
-        this.fontSize,
+        this.vwFontSize,
+        this.maxWidth,
         this.fontFamily,
         this.text,
         this.gradientType,
         this.gradientStartColor,
         this.gradientEndColor,
-        this.paddingRight,
-        this.paddingLeft,
-        this.paddingY,
+        this.vwPaddingRight,
+        this.vwPaddingLeft,
+        this.vhPaddingY,
         this.textAlign,
         this.textBaseline,
         this.fullScreen
@@ -181,10 +186,8 @@ class FontDots {
   public setupEventMouse(): void {
     this.canvas.addEventListener("mousemove", (e) => {
       const rect = this.canvas.getBoundingClientRect();
-      this.state.mouseX =
-        (e.clientX - rect.left) * (this.canvas.width / rect.width);
-      this.state.mouseY =
-        (e.clientY - rect.top) * (this.canvas.height / rect.height);
+      this.state.mouseX = (e.clientX - rect.left) * (this.canvas.width / rect.width);
+      this.state.mouseY = (e.clientY - rect.top) * (this.canvas.height / rect.height);
     });
     this.canvas.addEventListener("mouseout", () => {
       this.state.mouseX = null;
@@ -194,59 +197,55 @@ class FontDots {
 
   /**
    * Initializes the canvas with the given parameters and renders the text.
-   * @param fontSize - Font size of the text.
+   * @param vwFontSize - Font size of the text.
    * @param fontFamily - Font family of the text.
    * @param text - The text to be rendered.
    * @param gradientType - Gradient type for the text color.
    * @param gradientStartColor - Gradient start color.
    * @param gradientEndColor - Gradient end color.
-   * @param paddingRight - Horizontal padding on the right side.
-   * @param paddingLeft - Horizontal padding on the left side.
-   * @param paddingY - Vertical padding.
+   * @param vwPaddingRight - Horizontal padding on the right side.
+   * @param vwPaddingLeft - Horizontal padding on the left side.
+   * @param vhPaddingY - Vertical padding.
    * @param textAlign - Horizontal alignment of the text.
    * @param textBaseline - Vertical alignment of the text.
    * @param fullScreen - Whether to make the canvas full screen.
    */
   public initializeCanvas(
-    fontSize: number,
+    maxWidth: number,
+    vwFontSize: number,
     fontFamily: string,
     text: string,
     gradientType: string,
     gradientStartColor: string,
     gradientEndColor: string,
-    paddingRight: number = 0,
-    paddingLeft: number = 0,
-    paddingY: number = 0,
+    vwPaddingRight: number = 0,
+    vwPaddingLeft: number = 0,
+    vhPaddingY: number = 0,
     textAlign: CanvasTextAlign,
     textBaseline: CanvasTextBaseline,
-    fullScreen: boolean = false
+    fullScreen: boolean = false,
   ): void {
-    const responsiveFontSize = new ResponsiveValue(
-      fontSize,
-      this.breakpointsFont
-    );
+    const responsiveFontSize = new ResponsiveValue(vwFontSize, this.breakpointsFont);
     const dynamicFontSize = responsiveFontSize.getResponsiveValue();
-    const responsivePaddingRight = new ResponsiveValue(
-      paddingRight,
-      this.breakpointsPaddingX
-    );
+    const pxFontSize = new VwRangeCalculator(window.innerWidth, dynamicFontSize, maxWidth).calculate();
+
+    const responsivePaddingRight = new ResponsiveValue(vwPaddingRight, this.breakpointsPaddingX);
     const dynamicPaddingRight = responsivePaddingRight.getResponsiveValue();
-    const responsivePaddingLeft = new ResponsiveValue(
-      paddingLeft,
-      this.breakpointsPaddingX
-    );
+    const pxPaddingRight = new VwRangeCalculator(window.innerWidth, dynamicPaddingRight, maxWidth).calculate();
+
+    const responsivePaddingLeft = new ResponsiveValue(vwPaddingLeft, this.breakpointsPaddingX);
     const dynamicPaddingLeft = responsivePaddingLeft.getResponsiveValue();
-    const vhPaddingY = (paddingY / 100) * window.innerHeight;
+    const pxPaddingLeft = new VwRangeCalculator(window.innerWidth, dynamicPaddingLeft, maxWidth).calculate();
 
-    const lineHeight = dynamicFontSize * 1;
+    const pxPaddingY = new VhRangeCalculator(window.innerHeight, vhPaddingY, window.innerHeight).calculate();
+    const lineHeight = pxFontSize * 1;
 
-    this.ctx.font = `clamp(0rem, ${dynamicFontSize}vw, 3rem) ${fontFamily}`;
+    this.ctx.font = `${pxFontSize}px ${fontFamily}`;
     const textMetrics = this.ctx.measureText(text);
-    const actualTextWidth =
-      textMetrics.width / 2 + (dynamicPaddingLeft + dynamicPaddingRight) / 2;
+    const actualTextWidth = textMetrics.width / 2 + (pxPaddingLeft + pxPaddingRight) / 2;
     const lines = text.split("CRLF");
-    const totalTextHeight =
-      (lines.length * lineHeight * window.innerWidth) / 100;
+    const totalTextHeight = lines.length * lineHeight;
+    console.log("totalTextHeight", totalTextHeight);
 
     if (fullScreen) {
       this.canvas.width = window.innerWidth;
@@ -254,9 +253,8 @@ class FontDots {
       this.canvas.style.width = `${this.canvas.width}px`;
       this.canvas.style.height = `${this.canvas.height}px`;
     } else {
-      this.canvas.width =
-        actualTextWidth + dynamicPaddingLeft + dynamicPaddingRight;
-      this.canvas.height = totalTextHeight + vhPaddingY * 2;
+      this.canvas.width = actualTextWidth + pxPaddingLeft + pxPaddingRight;
+      this.canvas.height = totalTextHeight + pxPaddingY * 2;
       this.canvas.style.width = `${this.canvas.width}px`;
       this.canvas.style.height = `${this.canvas.height}px`;
 
@@ -267,16 +265,7 @@ class FontDots {
       }
     }
 
-    if (
-      [
-        "top",
-        "hanging",
-        "middle",
-        "alphabetic",
-        "ideographic",
-        "bottom",
-      ].includes(textBaseline)
-    ) {
+    if (["top", "hanging", "middle", "alphabetic", "ideographic", "bottom"].includes(textBaseline)) {
       this.ctx.textBaseline = textBaseline as CanvasTextBaseline;
     } else {
       throw new Error("Invalid textBaseline value");
@@ -290,23 +279,22 @@ class FontDots {
 
     let startX: number = 0;
     switch (textAlign) {
-      case "left":
-        startX = dynamicPaddingLeft;
+      case 'left':
+        startX = pxPaddingLeft;
         break;
-      case "center":
-        startX =
-          (this.canvas.width - dynamicPaddingLeft + dynamicPaddingRight) / 2;
+      case 'center':
+        startX = (this.canvas.width - pxPaddingLeft + pxPaddingRight) / 2;
         break;
-      case "right":
-        startX = this.canvas.width - dynamicPaddingRight;
+      case 'right':
+        startX = this.canvas.width - pxPaddingRight;
         break;
     }
 
-    this.ctx.font = `${dynamicFontSize}vw ${fontFamily}`;
+    this.ctx.font = `${pxFontSize}px ${fontFamily}`;
     if (gradientType === "gradient-vertical") {
       const firstLineColor = gradientStartColor;
       const secondLineColor = gradientEndColor;
-      const firstLineEndY = vhPaddingY + lineHeight;
+      const firstLineEndY = pxPaddingY + lineHeight;
       const gradientPercentage = firstLineEndY / this.canvas.height;
 
       let gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
@@ -330,23 +318,18 @@ class FontDots {
     for (let i = 0; i < lines.length; i++) {
       let yPosition: number;
       switch (textBaseline) {
-        case "top":
-          yPosition = vhPaddingY + (i * lineHeight * window.innerWidth) / 100;
+        case 'top':
+          yPosition = pxPaddingY + i * lineHeight * window.innerWidth / 100;
           break;
-        case "middle":
-          yPosition =
-            (this.canvas.height - totalTextHeight) / 2 +
-            (i * lineHeight * window.innerWidth) / 100;
+        case 'middle':
+          yPosition = (this.canvas.height - totalTextHeight) / 2 + i * lineHeight * window.innerWidth / 100;
           break;
-        case "bottom":
-        case "alphabetic":
-          yPosition =
-            this.canvas.height -
-            vhPaddingY -
-            ((lines.length - 1 - i) * lineHeight * window.innerWidth) / 100;
+        case 'bottom':
+        case 'alphabetic':
+          yPosition = this.canvas.height - pxPaddingY - (lines.length - 1 - i) * lineHeight * window.innerWidth / 100;
           break;
         default:
-          yPosition = vhPaddingY + (i * lineHeight * window.innerWidth) / 100;
+          yPosition = pxPaddingY + i * lineHeight * window.innerWidth / 100;
           break;
       }
       this.ctx.fillText(lines[i], startX, yPosition);
@@ -359,26 +342,15 @@ class FontDots {
    * @param moveDirection - Initial direction of the dots.
    * @param moveSpeed - Speed at which the dots move towards their target position.
    */
-  public createDots(
-    spacing: number,
-    moveDirection: string,
-    moveSpeed: number,
-    minRadius: number,
-    maxRadius: number
-  ): void {
+  public createDots(spacing: number, moveDirection: string, moveSpeed: number, minRadius: number, maxRadius: number): void {
     this.dots = [];
     for (let y = 0; y < this.canvas.height; y += spacing) {
       for (let x = 0; x < this.canvas.width; x += spacing) {
         const pixel = this.ctx.getImageData(x, y, 1, 1).data;
         if (pixel[3] > 0) {
-          const randomRadius =
-            minRadius + Math.random() * (maxRadius - minRadius);
+          const randomRadius = minRadius + Math.random() * (maxRadius - minRadius);
           const dot = new Dot(x, y, randomRadius);
-          dot.setInitialPosition(
-            moveDirection,
-            this.canvas.width,
-            this.canvas.height
-          );
+          dot.setInitialPosition(moveDirection, this.canvas.width, this.canvas.height);
           dot.move(moveSpeed);
           this.dots.push(dot);
         }
@@ -392,34 +364,18 @@ class FontDots {
    * @param moveDirection - Initial direction of the dots.
    * @param moveSpeed - Speed at which the dots move towards their target position.
    */
-  public createDotsBeforeGetImg(
-    spacing: number,
-    moveDirection: string,
-    moveSpeed: number,
-    minRadius: number,
-    maxRadius: number
-  ): void {
+  public createDotsBeforeGetImg(spacing: number, moveDirection: string, moveSpeed: number, minRadius: number, maxRadius: number): void {
     this.dots = [];
-    const imageData = this.ctx.getImageData(
-      0,
-      0,
-      this.canvas.width,
-      this.canvas.height
-    );
+    const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
     const data = imageData.data;
 
     for (let y = 0; y < this.canvas.height; y += spacing) {
       for (let x = 0; x < this.canvas.width; x += spacing) {
         const index = (y * this.canvas.width + x) * 4;
         if (data[index + 3] > 0) {
-          const randomRadius =
-            minRadius + Math.random() * (maxRadius - minRadius);
+          const randomRadius = minRadius + Math.random() * (maxRadius - minRadius);
           const dot = new Dot(x, y, randomRadius);
-          dot.setInitialPosition(
-            moveDirection,
-            this.canvas.width,
-            this.canvas.height
-          );
+          dot.setInitialPosition(moveDirection, this.canvas.width, this.canvas.height);
           dot.move(moveSpeed);
           this.dots.push(dot);
         }
@@ -440,7 +396,7 @@ class FontDots {
     hoverDistance: number,
     hoverOffset: number,
     vibrationDirection: number,
-    lerpSpeed: number
+    lerpSpeed: number,
   ): void {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
     for (const dot of this.dots) {
@@ -473,15 +429,7 @@ class FontDots {
       this.ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
       this.ctx.fill();
     }
-    requestAnimationFrame(() =>
-      this.animateDots(
-        text,
-        hoverDistance,
-        hoverOffset,
-        vibrationDirection,
-        lerpSpeed
-      )
-    );
+    requestAnimationFrame(() => this.animateDots(text, hoverDistance, hoverOffset, vibrationDirection, lerpSpeed));
   }
   /**
    * Lerp function to interpolate between two values.
@@ -527,11 +475,7 @@ class Dot {
    * @param canvasWidth - Width of the canvas.
    * @param canvasHeight - Height of the canvas.
    */
-  setInitialPosition(
-    direction: string,
-    canvasWidth: number,
-    canvasHeight: number
-  ): void {
+  setInitialPosition(direction: string, canvasWidth: number, canvasHeight: number): void {
     switch (direction) {
       case "right":
         this.x = canvasWidth + Math.random() * canvasWidth;
@@ -566,18 +510,12 @@ class Dot {
         this.y = canvasHeight + Math.random() * canvasHeight;
         break;
       case "horizontal":
-        this.x =
-          Math.random() > 0.5
-            ? -Math.random() * canvasWidth
-            : canvasWidth + Math.random() * canvasWidth;
+        this.x = Math.random() > 0.5 ? -Math.random() * canvasWidth : canvasWidth + Math.random() * canvasWidth;
         this.y = this.originalY;
         break;
       case "vertical":
         this.x = this.originalX;
-        this.y =
-          Math.random() > 0.5
-            ? -Math.random() * canvasHeight
-            : canvasHeight + Math.random() * canvasHeight;
+        this.y = Math.random() > 0.5 ? -Math.random() * canvasHeight : canvasHeight + Math.random() * canvasHeight;
         break;
       case "allDirections":
         const randomAngle = Math.random() * Math.PI * 2;
@@ -595,10 +533,7 @@ class Dot {
     const distanceToTargetY = this.originalY - this.y;
     const threshold = 0.1;
 
-    if (
-      Math.abs(distanceToTargetX) > threshold ||
-      Math.abs(distanceToTargetY) > threshold
-    ) {
+    if (Math.abs(distanceToTargetX) > threshold || Math.abs(distanceToTargetY) > threshold) {
       this.x += (this.originalX - this.x) * lerpSpeed;
       this.y += (this.originalY - this.y) * lerpSpeed;
     } else {
