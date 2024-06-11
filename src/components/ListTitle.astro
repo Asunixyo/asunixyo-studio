@@ -8,10 +8,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<div class="flex items-center gap-[2vw]">
+<div class="flex items-center gap-clamp-2vw">
   <div
-    class="w-[3vw] h-full aspect-square rounded-full bg-[#FFC6C7] opacity-80"
+    class="w-clamp-3vw h-full aspect-square rounded-full bg-[#FFC6C7] opacity-80"
   >
   </div>
-  <p class="font-NotoSansJPBold text-[3vw]">{title}</p>
+  <p class="font-NotoSansJPBold text-clamp-3vw">{title}</p>
 </div>

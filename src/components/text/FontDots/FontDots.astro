@@ -1,0 +1,149 @@
+---
+import type { Breakpoints } from "@utils/utilities.ts";
+
+interface Props {
+  idName: string;
+  className: string;
+  text: string;
+  fontFamily: string[];
+  fontSize: number;
+  paddingRight: number;
+  paddingLeft: number;
+  paddingY: number;
+  spacing: number;
+  minRadius: number;
+  maxRadius: number;
+  hoverDistance: number;
+  hoverOffset: number;
+  lerpSpeed: number;
+  vibrationDirection: number;
+  gradientType: string;
+  gradientStartColor: string;
+  gradientEndColor: string;
+  textAlign: string;
+  textBaseline: string;
+  fullScreen: boolean;
+  moveDirection: string;
+  moveSpeed: number;
+  animationDelay: number;
+}
+
+const {
+  idName,
+  className,
+  text,
+  fontFamily,
+  fontSize,
+  paddingRight,
+  paddingLeft,
+  paddingY,
+  spacing,
+  minRadius,
+  maxRadius,
+  hoverDistance,
+  hoverOffset,
+  lerpSpeed,
+  vibrationDirection,
+  gradientType,
+  gradientStartColor,
+  gradientEndColor,
+  textAlign,
+  textBaseline,
+  fullScreen,
+  moveDirection,
+  moveSpeed,
+  animationDelay,
+}: Props = Astro.props;
+
+const breakpointsFont: Breakpoints = {
+  "3xs": 1,
+  "2xs": 1,
+  xs: 1,
+  sm: 1,
+  md: 0.5,
+  lg: 0.5,
+  xl: 0.8,
+  "2xl": 0.8,
+  "3xl": 0.8,
+};
+
+const breakpointsPaddingX: Breakpoints = {
+  "3xs": 0,
+  "2xs": 0,
+  xs: 0,
+  sm: 0,
+  md: 0,
+  lg: 0,
+  xl: 0,
+  "2xl": 0,
+  "3xl": 0,
+};
+---
+
+<canvas id={`${idName}`} class={`${className}`}></canvas>
+
+<script
+  define:vars={{
+    idName,
+    text,
+    fontFamily,
+    fontSize,
+    paddingRight,
+    paddingLeft,
+    paddingY,
+    spacing,
+    minRadius,
+    maxRadius,
+    hoverDistance,
+    hoverOffset,
+    lerpSpeed,
+    vibrationDirection,
+    gradientType,
+    gradientStartColor,
+    gradientEndColor,
+    textAlign,
+    textBaseline,
+    fullScreen,
+    moveDirection,
+    moveSpeed,
+    breakpointsFont,
+    breakpointsPaddingX,
+    animationDelay,
+  }}
+  type="module"
+>
+  import FontDots from "/src/components/text/FontDots/FontDots.ts";
+
+  const dotFontCanvas = document.getElementById(idName);
+  if (!dotFontCanvas || !(dotFontCanvas instanceof HTMLCanvasElement)) {
+    throw new Error("Canvas element not found!");
+  }
+  const fontDots = new FontDots(
+    dotFontCanvas,
+    fontSize,
+    fontFamily,
+    text,
+    gradientType,
+    gradientStartColor,
+    gradientEndColor,
+    paddingRight,
+    paddingLeft,
+    paddingY,
+    textAlign,
+    textBaseline,
+    fullScreen,
+    breakpointsFont,
+    breakpointsPaddingX,
+    spacing,
+    moveDirection,
+    moveSpeed,
+    minRadius,
+    maxRadius,
+    hoverDistance,
+    hoverOffset,
+    vibrationDirection,
+    lerpSpeed,
+    animationDelay
+  );
+  fontDots.launchSetup();
+</script>

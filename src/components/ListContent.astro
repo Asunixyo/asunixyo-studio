@@ -4,7 +4,7 @@ import ListTitle from "@components/ListTitle.astro";
 interface Props {
   className?: string;
   title: string;
-  text: string;
+  text?: string;
 }
 
 const { className, title, text } = Astro.props;
@@ -12,7 +12,7 @@ const { className, title, text } = Astro.props;
 
 <li class={className}>
   <ListTitle title={title} />
-  <p class="ml-[5vw] leading-[4vh] text-[3vw]">
+  <p class="ml-clamp-5vw leading-clamp-4vh text-clamp-3vw">
     {text}
   </p>
 </li>

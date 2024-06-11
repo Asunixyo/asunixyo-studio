@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@layouts/Header.astro";
 import WorkTittle from "@components/WorkTittle.astro";
 import ListContent from "@components/ListContent.astro";
+import FontDots from "@components/text/FontDots/FontDots.astro";
 import "@styles/clamps.css";
 import "@styles/fonts.css";
 ---
@@ -10,9 +11,9 @@ import "@styles/fonts.css";
 <Layout title="Welcome to Asunixyo Studio.">
   <Header />
   <div class="overflow-x-hidden">
-    <div class="px-[5vw]">
+    <div class="px-clamp-5vw">
       <WorkTittle text="コーポレートサイトの実装" />
-      <div class="flex justify-center items-center mb-[3vh]">
+      <div class="flex justify-center items-center mb-clamp-3vh">
         <div class="w-full">
           <img
             class="w-full rounded-xl"
@@ -23,14 +24,45 @@ import "@styles/fonts.css";
       </div>
       <ul>
         <ListContent
-          className="mb-[3vh]"
+          className="mb-clamp-3vh"
           title="WordPressで構築"
           text="index.php、archive.phpなどの構成で構築"
         />
         <ListContent
-          className="mb-[3vh]"
-          title="独自のアニメーション実装（TypeScript）"
-          text="dot font の実装"
+          className="mb-clamp-3vh"
+          title="dot font の実装（TypeScript）"
+        />
+        <div class="relative py-[10vh]">
+          <FontDots
+            idName="dotFontCanvas"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            text="Welcome to CRLFAsunixyo Studio."
+            fontFamily={["KumarOne Regular"]}
+            fontSize={9}
+            paddingRight={0}
+            paddingLeft={0}
+            paddingY={2}
+            spacing={3.6}
+            minRadius={1.5}
+            maxRadius={1.5}
+            hoverDistance={100}
+            hoverOffset={100}
+            lerpSpeed={0.07}
+            vibrationDirection={0.5}
+            gradientType="gradient-horizontal"
+            gradientStartColor="#FF8BA7"
+            gradientEndColor="#FF8BA7"
+            textAlign="center"
+            textBaseline="top"
+            fullScreen={false}
+            moveDirection="allDirections"
+            moveSpeed={0.3}
+            animationDelay={1000}
+          />
+        </div>
+        <ListContent
+          className="mb-clamp-3vh"
+          title="スライダー の実装（TypeScript）"
         />
       </ul>
     </div>
