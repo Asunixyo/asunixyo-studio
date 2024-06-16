@@ -187,7 +187,11 @@ class WordPressApi {
     return [];
   }
 
-  static getCategory(categories, categoryId, returnType = "category") {
+  static getCategory(
+    categories: any,
+    categoryId: any,
+    returnType = "category"
+  ) {
     if (!Array.isArray(categories)) {
       console.error("Invalid categories array");
       return null;
