@@ -1,0 +1,142 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@layouts/Header.astro";
+import WorkTittle from "@components/WorkTittle.astro";
+import ListContent from "@components/ListContent.astro";
+import FontDots from "@components/text/FontDots/FontDots.astro";
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+import SliderVertical from "@components/slider/SliderVertical/SliderVertical.astro";
+import SlideVertical from "@components/slider/SliderVertical/SlideVertical.astro";
+import "@styles/clamps.css";
+import "@styles/fonts.css";
+---
+
+<Layout title="Welcome to Asunixyo Studio.">
+  <Header />
+  <div class="overflow-hidden">
+    <div class="px-clamp-5vw">
+      <WorkTittle text="コーポレートサイトの実装" />
+      <div class="flex justify-center items-center mb-clamp-3vh">
+        <div class="w-full">
+          <ResponsivePicture
+            className="w-full rounded-xl"
+            src="/assets/images/works/corporate-site/corporate-site"
+            alt="コーポレートサイトの説明"
+          />
+        </div>
+      </div>
+      <ul>
+        <ListContent
+          className="mb-clamp-3vh"
+          title="WordPressで構築"
+          text="index.php、archive.phpなどの構成で構築"
+        />
+        <ListContent
+          className="mb-clamp-3vh"
+          title="dot font の実装（TypeScript）"
+        />
+        <div class="relative pt-clamp-12vh pb-clamp-8vh w-full">
+          <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <FontDots
+              idName="dotFontCanvasFirst"
+              className=""
+              text="Welcome to"
+              fontFamily={["KumarOne Regular"]}
+              maxWidth={430}
+              vwFontSize={9}
+              vwPaddingRight={20}
+              vwPaddingLeft={20}
+              vhPaddingY={0}
+              spacing={3.6}
+              minRadius={1.5}
+              maxRadius={1.5}
+              hoverDistance={100}
+              hoverOffset={100}
+              lerpSpeed={0.07}
+              vibrationDirection={0.5}
+              gradientType="gradient-horizontal"
+              gradientStartColor="#FF8BA7"
+              gradientEndColor="#FF8BA7"
+              textAlign="center"
+              textBaseline="top"
+              fullScreen={false}
+              moveDirection="allDirections"
+              moveSpeed={0.3}
+              animationDelay={1000}
+            />
+          </div>
+          <div
+            class="absolute top-4/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <FontDots
+              idName="dotFontCanvasSecond"
+              className=""
+              text="Asuka's Studio"
+              fontFamily={["KumarOne Regular"]}
+              maxWidth={430}
+              vwFontSize={9}
+              vwPaddingRight={20}
+              vwPaddingLeft={20}
+              vhPaddingY={0}
+              spacing={3.6}
+              minRadius={1.5}
+              maxRadius={1.5}
+              hoverDistance={100}
+              hoverOffset={100}
+              lerpSpeed={0.07}
+              vibrationDirection={0.5}
+              gradientType="gradient-horizontal"
+              gradientStartColor="#FF8BA7"
+              gradientEndColor="#FF8BA7"
+              textAlign="center"
+              textBaseline="top"
+              fullScreen={false}
+              moveDirection="allDirections"
+              moveSpeed={0.3}
+              animationDelay={1000}
+            />
+          </div>
+        </div>
+        <!-- <ListContent
+          className="mb-clamp-3vh"
+          title="スライダー の実装（TypeScript）"
+        /> -->
+        <!-- <SliderVertical count={4}>
+          <SlideVertical
+            textClass=""
+            textTop="もじ"
+            textMain="メイン"
+            imgSrc="/assets/images/works/corporate-site/test.jpg"
+            link=""
+          />
+          <SlideVertical
+            textClass=""
+            textTop="もじ"
+            textMain="メイン"
+            imgSrc="/assets/images/works/corporate-site/test.jpg"
+            link=""
+          />
+          <SlideVertical
+            textClass=""
+            textTop="もじ"
+            textMain="メイン"
+            imgSrc="/assets/images/works/corporate-site/test.jpg"
+            link=""
+          />
+          <SlideVertical
+          textClass=""
+          textTop="もじ"
+          textMain="メイン"
+          imgSrc="/assets/images/works/corporate-site/test.jpg"
+          link=""
+        />
+        </SliderVertical> -->
+      </ul>
+      <p class="mb-clamp-3vh font-bold text-clamp-3vw text-[#FF8BA7]">
+        <a href="https://reqkaji.com/"> こちらへ→ </a>
+      </p>
+    </div>
+  </div>
+</Layout>

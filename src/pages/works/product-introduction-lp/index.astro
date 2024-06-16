@@ -1,0 +1,50 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@layouts/Header.astro";
+import WorkTittle from "@components/WorkTittle.astro";
+import ListContent from "@components/ListContent.astro";
+import FontDots from "@components/text/FontDots/FontDots.astro";
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+import SliderVertical from "@components/slider/SliderVertical/SliderVertical.astro";
+import SlideVertical from "@components/slider/SliderVertical/SlideVertical.astro";
+import "@styles/clamps.css";
+import "@styles/fonts.css";
+---
+
+<Layout title="Welcome to Asunixyo Studio.">
+  <Header />
+  <div class="overflow-x-hidden">
+    <div class="px-clamp-5vw">
+      <WorkTittle text="商品紹介LP制作" />
+      <div class="flex justify-center items-center mb-clamp-3vh">
+        <div class="w-full">
+          <ResponsivePicture
+            className="w-full rounded-xl"
+            src="/assets/images/works/product-introduction-lp/product-introduction-lp"
+            alt="商品紹介LPの説明"
+          />
+        </div>
+      </div>
+      <ul>
+        <ListContent
+          className="mb-clamp-3vh"
+          title="Astro"
+          text="静的サイト生成に特化したモダンなフレームワークで、非常に高速なウェブサイトを構築できるため、パフォーマンスとSEOを重視したサイト構築を実現します。コンポーネントベースのUI開発を支援しています。"
+        />
+        <ListContent
+          className="mb-clamp-3vh"
+          title="Tailwind CSS"
+          text="ユーティリティファーストのCSSフレームワークで、迅速かつ効率的なカスタムデザインが可能です。開発の生産性向上とデザインの一貫性に優れています。"
+        />
+        <ListContent
+          className="mb-clamp-3vh"
+          title="clamp(CSS関数)"
+          text="CSSのclamp関数は、最小値、優先値、最大値を設定し、動的なサイズをレスポンシブに制御できます。これにより、フォントサイズや要素のサイズを柔軟に管理できます。"
+        />
+      </ul>
+      <p class="mb-clamp-3vh font-bold text-clamp-3vw text-[#FF8BA7]">
+        <a href="https://www.e-namaco.com/lp/001/"> こちらへ→ </a>
+      </p>
+    </div>
+  </div>
+</Layout>

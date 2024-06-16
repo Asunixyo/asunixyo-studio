@@ -1,0 +1,74 @@
+---
+interface Props {
+  count: number;
+}
+
+const { count }: Props = Astro.props;
+---
+
+<div class="flex justify-center mb-5">
+  <div class="flex items-center mr-10">
+    <p class="slide-target-number">1</p>
+    <p>/ {count}</p>
+  </div>
+  <div
+    class="prev cursor-pointer flex justify-center items-center shadow-inner-top mx-5 rounded-full bg-white w-12 h-12"
+    @click="scroll(-1)"
+  >
+    <p class="text-sky-600 text-2xl">←</p>
+  </div>
+  <div
+    class="next cursor-pointer flex justify-center items-center shadow-inner-top mx-5 rounded-full bg-white w-12 h-12"
+    @click="scroll(1)"
+  >
+    <p class="text-sky-600 text-2xl">→</p>
+  </div>
+</div>
+<div class="slider overflow-x-scroll w-full">
+  <div class="slider-track flex">
+    <slot />
+  </div>
+</div>
+<div class="slider-position flex mt-2">
+  <div class="h-0.5 w-12 bg-slate-400"></div>
+  <div class="h-0.5 w-12 bg-slate-400"></div>
+  <div class="h-0.5 w-12 bg-slate-400"></div>
+</div>
+
+<style lang="scss">
+  .slider {
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slider-track {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .slide {
+      flex: 0 0 calc(100% / 3);
+      scroll-snap-align: start;
+    }
+  }
+</style>
+
+<script>
+  import SliderVertical from "@components/slider/SliderVertical/SliderVertical";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliderInstance = new SliderVertical(
+      ".slider",
+      ".slide",
+      ".slider-track",
+      5000,
+      ".slider-position > div",
+      "bg-sky-500"
+    );
+    sliderInstance.attachControls(".prev", ".next");
+    // sliderInstance.startAutoSlide();
+  });
+</script>

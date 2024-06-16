@@ -1,0 +1,18 @@
+---
+interface Props {
+  className: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class=`relative aspect-square h-full ${className}`>
+  <div
+    class="z-10 absolute top-[0%] right-[0%] w-[90%] aspect-square rounded-full bg-[#FFC6C7] border-[#FFC6C7] border-2"
+  >
+  </div>
+  <div
+    class="absolute bottom-[0%] left-[0%] w-[40%] aspect-square rounded-full bg-[#FFD9DA] border-[#FFD9DA] border-2 opacity-80"
+  >
+  </div>
+</div>

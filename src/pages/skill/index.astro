@@ -1,0 +1,126 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@layouts/Header.astro";
+import SpeechBubble from "@components/SpeechBubble.astro";
+import TypographyH2 from "@components/TypographyH2.astro";
+import BubbleSkill from "@components/BubbleSkill.astro";
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+import "@styles/clamps.css";
+import "@styles/fonts.css";
+---
+
+<Layout title="Welcome to Asunixyo Studio.">
+  <Header />
+  <main>
+    <section class="mb-clamp-6vh px-clamp-5vw">
+      <TypographyH2 text="SKILL" />
+      <div class="relative h-clamp-71vh">
+        <div class="absolute top-clamp-0vh -left-clamp-2vw">
+          <BubbleSkill
+            languageImgSrcNotExtension="/assets/images/skill/html"
+            alt="html"
+            className="line-clamp-3 absolute top-0 left-0 w-clamp-49vw bg-[#FFC6C7]"
+            classNameText="line-clamp-3"
+            text="半年間の実務経験を通じて、パーツ単位から全体のレイアウトまでのデザインを実現する能力を磨き上げました。特に、レスポンシブデザインにも対応し、様々なデバイスでの閲覧を考慮したレイアウト作成が得意です。"
+          />
+          <BubbleSkill
+            className="absolute -top-clamp-2vw left-clamp-36vw w-clamp-18vw bg-[#FFC6C7]"
+            languageText="HTML"
+          />
+        </div>
+        <div class="absolute top-clamp-3vh left-clamp-60vw">
+          <BubbleSkill
+            languageImgSrcNotExtension="/assets/images/skill/css"
+            alt="css"
+            className="absolute top-0 left-0 w-clamp-29vw bg-[#FFD9DA]"
+            classNameText="line-clamp-2"
+            text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
+          />
+          <BubbleSkill
+            className="absolute top-clamp-21.5vw -left-clamp-9vw w-clamp-18vw bg-[#FFD9DA]"
+            languageText="CSS"
+          />
+        </div>
+        <div class="absolute top-clamp-28vh left-clamp-30vw">
+          <BubbleSkill
+            languageImgSrcNotExtension="/assets/images/skill/wordpress"
+            alt="wordpress"
+            className="absolute top-0 left-0 w-clamp-44vw bg-[#FFD9DA]"
+            classNameText="line-clamp-3"
+            text="ショートコードの知見を持っており、今後はWordPressの高度なカスタマイズやテーマ作成にも挑戦していく予定です。"
+          />
+          <BubbleSkill
+            className="absolute top-clamp-1vw -left-clamp-11vw w-clamp-18vw bg-[#FFD9DA]"
+            languageText="Word<br />Press"
+          />
+        </div>
+        <div class="absolute top-clamp-44vh -left-clamp-1vw">
+          <BubbleSkill
+            languageImgSrcNotExtension="/assets/images/skill/astro"
+            alt="astro"
+            className="absolute top-0 left-0 w-clamp-33vw bg-[#FFF]"
+            classNameLanguage="text-[#FFD9DA]"
+            classNameText="line-clamp-2"
+            text="デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。"
+          />
+          <BubbleSkill
+            className="absolute -top-clamp-10vw -left-clamp-1vw w-clamp-18vw bg-[#FFF]"
+            classNameLanguage="text-[#FFD9DA]"
+            languageText="Astro"
+          />
+        </div>
+        <div class="absolute top-clamp-55vh left-clamp-52vw">
+          <BubbleSkill
+            languageImgSrcNotExtension="/assets/images/skill/javascript"
+            alt="javascript"
+            className="absolute top-0 left-0 w-clamp-32vw bg-[#FFC6C7]"
+            classNameText="line-clamp-3"
+            text="「slick」や「gallery」の導入経験を持っています。これにより、動的なウェブページの実装やユーザー体験の向上が期待できます。"
+          />
+          <BubbleSkill
+            className="absolute -top-clamp-6vw left-clamp-22vw w-clamp-18vw bg-[#FFC6C7]"
+            languageText="Java<br />script"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="overflow-x-hidden">
+      <div class="relative">
+        <div class="pt-clamp-55vh w-clamp-30vw-16.0vh">
+          <ResponsivePicture
+            className="w-full"
+            src="/assets/images/first-view/balloon-kids"
+            alt="風船を持った男の子"
+          />
+        </div>
+        <SpeechBubble
+          className="absolute top-clamp-51vh left-clamp-51vw-27.1vh w-clamp-21vw-11.2vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-50vh left-clamp-31vw-16.5vh w-clamp-22vw-11.7vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-51.5vh left-clamp-69vw-36.7vh w-clamp-20vw-10.6vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-43vh left-clamp-42vw-22.4vh w-clamp-20vw-10.6vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-43vh left-clamp-60vw-31.9vh w-clamp-22vw-11.7vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-56vh left-clamp-42vw-22.4vh w-clamp-20vw-10.6vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-56vh left-clamp-56vw-29.8vh w-clamp-23vw-12.2vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-60vh left-clamp-33vw-17.6vh w-clamp-12vw-6.4vh"
+        />
+        <SpeechBubble
+          className="absolute top-clamp-65vh left-clamp-26vw-13.8vh w-clamp-6vw-3.2vh"
+        />
+      </div>
+    </section>
+  </main>
+</Layout>

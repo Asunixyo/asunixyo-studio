@@ -1,0 +1,16 @@
+---
+import TwoBubbles from "@components/TwoBubbles.astro";
+
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="mb-clamp-1vh gap-clamp-2vw flex items-center justify-center">
+  <p class="font-NotoSansJPBold text-clamp-3.7vw text-[#FF8BA7]">
+    {text}
+  </p>
+  <TwoBubbles className="w-clamp-6vw" />
+</div>
