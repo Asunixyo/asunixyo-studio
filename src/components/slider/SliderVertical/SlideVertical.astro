@@ -1,0 +1,21 @@
+---
+interface Props {
+  textClass: string;
+  textTop: string;
+  textMain: string;
+  imgSrc: string;
+  link: string;
+}
+
+const { textClass, textTop, textMain, imgSrc, link }: Props = Astro.props;
+---
+
+<div class="slide relative w-1/3 flex justify-center items-center mx-3 py-5">
+  <p class={`absolute top-0 left-2 ${textClass}`}>{textTop}</p>
+  <a href={link}>
+    <img class="object-contain h-fit" src={imgSrc} alt="" />
+  </a>
+  <div class="p-2 absolute bottom-8">
+    <p class="text-md text-white">{textMain}</p>
+  </div>
+</div>
