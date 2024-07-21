@@ -1,0 +1,49 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@layouts/Header.astro";
+import WorkTittle from "@components/WorkTittle.astro";
+import ListContent from "@components/ListContent.astro";
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+import "@styles/clamps.css";
+import "@styles/fonts.css";
+---
+
+<Layout title="Welcome to Asunixyo Studio.">
+  <Header />
+  <div class="overflow-x-hidden">
+    <div class="px-clamp-5vw">
+      <WorkTittle text="高校のホームページ制作" />
+      <div class="flex justify-center items-center mb-clamp-3vh">
+        <div class="w-full">
+          <ResponsivePicture
+            className="w-full rounded-xl"
+            src="/assets/images/works/high-school-hp/high-school-hp"
+            alt="高校のホームページ制作の説明"
+          />
+        </div>
+      </div>
+      <ul>
+        <ListContent
+          className="mb-clamp-3vh"
+          title="WordPressで構築"
+          text="index.php、archive.php、single.phpなどの構成で構築"
+        />
+        <ListContent
+          className="mb-clamp-3vh"
+          title="Slick Carousel"
+          text="JavaScriptで実装されたレスポンシブなスライダー・カルーセルプラグインで、多機能かつカスタマイズが容易なため、ユーザーや開発者は多様なデザイン要求に応じたスライダーを迅速に実装できます。"
+        />
+        <ListContent
+          className="mb-clamp-3vh"
+          title="Tailwind CSS"
+          text="ユーティリティファーストのモダンなCSSフレームワークで、迅速かつカスタマイズ可能なスタイルの実装を支援します。"
+        />
+      </ul>
+      <p class="mb-clamp-3vh font-bold text-clamp-3vw text-[#FF8BA7]">
+        <a target="_blank" href="https://kgcoutougakuin-setagaya.tokyo/"
+          >こちらへ→
+        </a>
+      </p>
+    </div>
+  </div>
+</Layout>

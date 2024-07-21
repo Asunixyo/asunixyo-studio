@@ -1,0 +1,42 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@layouts/Header.astro";
+import WorkTittle from "@components/WorkTittle.astro";
+import ListContent from "@components/ListContent.astro";
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+import "@styles/clamps.css";
+import "@styles/fonts.css";
+---
+
+<Layout title="Welcome to Asunixyo Studio.">
+  <Header />
+  <div class="overflow-x-hidden">
+    <div class="px-clamp-5vw">
+      <WorkTittle text="ポートフォリオ（WordPress）" />
+      <div class="flex justify-center items-center mb-clamp-3vh">
+        <div class="w-full">
+          <ResponsivePicture
+            className="w-full rounded-xl"
+            src="/assets/images/works/portfolio/portfolio"
+            alt="ポートフォリオ（WordPress）の説明"
+          />
+        </div>
+      </div>
+      <ul>
+        <ListContent
+          className="mb-clamp-3vh"
+          title="Sass"
+          text="効率的なCSS記述と保守性の向上を実現するCSSプリプロセッサを使用して、変数、ネスト、ミックスインなどの機能を提供し、CSSの作成をより効率的かつ組織的にします。"
+        />
+        <ListContent
+          className="mb-clamp-3vh"
+          title="WordPressで構築"
+          text="front-page.php、archive.php、page-contact.phpなどの構成で構築"
+        />
+      </ul>
+      <p class="mb-clamp-3vh font-bold text-clamp-3vw text-[#FF8BA7]">
+        <a target="_blank" href="https://asunixyo.com/">こちらへ→ </a>
+      </p>
+    </div>
+  </div>
+</Layout>
