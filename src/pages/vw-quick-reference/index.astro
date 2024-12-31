@@ -1,0 +1,52 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@layouts/Header.astro";
+import TypographyH2 from "@components/TypographyH2.astro";
+import ResponsivePicture from "@components/ResponsivePicture.astro";
+import "@styles/clamps.css";
+import "@styles/fonts.css";
+---
+
+<Layout title="Welcome to Asunixyo Studio.">
+  <Header />
+  <main class="overflow-x-hidden">
+    <div class="px-clamp-5vw">
+      <section class="mb-clamp-6vh">
+        <TypographyH2 text="ABOUT" />
+        <div class="flex justify-center">
+          <div class="relative w-clamp-80vw">
+            <div class="absolute -top-clamp-1vw right-clamp-6vw w-clamp-50vw">
+              <ResponsivePicture
+                className="w-full rounded-full"
+                src="/assets/images/about/me"
+                alt="自分の写真"
+              />
+            </div>
+            <div
+              class="absolute top-clamp-24vw left-clamp-8vw w-clamp-29vw rounded-md"
+            >
+              <ResponsivePicture
+                className="w-full rounded-full"
+                src="/assets/images/about/cat"
+                alt="猫の肉球"
+              />
+            </div>
+            <div
+              class="text-clamp-3.3vw pt-clamp-60vw tracking-widest leading-7"
+            >
+              <p>
+                東京都出身の25歳、フリーランスのWebエンジニアとして活動しています。
+              </p>
+              <p>
+                保育業界で4年間の経験を積み、その後はWeb系の会社に転職し、デザインとエンジニアリングの知識を深め、SEOの分野でも実績を持っています。どうぞよろしくお願いいたします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mb-clamp-6vh px-clamp-5vw">
+        <TypographyH2 text="HISTORY" />
+      </section>
+    </div>
+  </main></Layout
+>
