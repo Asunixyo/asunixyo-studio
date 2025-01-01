@@ -20,13 +20,14 @@ type VWData = {
 }
 
 export const TableVw = () => {
+  const apiUrl = import.meta.env.PUBLIC_API_URL;
   const [result, setResult] = useState<VWData[]>([])
   const [maxWidth, setMaxWidth] = useState<number>(1200)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/get-vw/${maxWidth}`);
+        const res = await fetch(`${apiUrl}/get-vw/${maxWidth}`);
         const data = await res.json();
         setResult(data);
       } catch (error) {
